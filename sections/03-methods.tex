@@ -12,7 +12,10 @@ valence--arousal quadrants, recorded with a low-cost Emotiv EPOC+ and a high-end
 BrainVision system. The archive's \texttt{EEG/Experiment\_files} directory contains 18 BrainVision
 recordings (66 channels, 500\,Hz, sampling interval 2000\,\textmu s); a nineteenth
 recording sits in a separate \texttt{EEG registro\_nuevo} folder and was not used. All
-18 recordings in the analysed directory completed the pipeline. BrainVision
+18 recordings in the analysed directory completed the pipeline. The files are named
+\texttt{eegbci<subject>-<session>} by the archive; this is the archive's own naming for
+the affective recordings and does not refer to the EEGBCI motor dataset. The
+valence/arousal labels come from the affective picture protocol, not from a motor task. BrainVision
 marker codes map to the quadrants as follows: 1 = high valence/high arousal,
 2 = low valence/high arousal, 3 = high valence/low arousal, 4 = low valence/low
 arousal, 10/14 = neutral. Each recording contains approximately 10 trials per quadrant

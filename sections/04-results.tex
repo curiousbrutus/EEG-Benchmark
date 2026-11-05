@@ -16,7 +16,8 @@ That comparison is confounded by electrode site. Two corrections are needed. Fir
 acquisition chain itself costs almost nothing to \emph{reactivity}: keeping the same
 electrode (Fz in the full recording versus Fz after the chain), the paired difference was
 $-0.0001$ ($[-0.0004, 0.0001]$), i.e.\ \textbf{99.99\%} of the reactivity effect was
-retained. Second, the electrode-site decision is not free: eyes-closed alpha power at Fz
+retained; the corresponding retention interval $[0.9996, 1.0001]$ is stored in
+\texttt{results/site\_metrics.json} (\texttt{chain\_retention}). Second, the electrode-site decision is not free: eyes-closed alpha power at Fz
 is only about \textbf{58\%} of the posterior-channel average (ratio $0.58$,
 $[0.52, 0.63]$). A single-channel device therefore pays for its site choice, not for its
 sampling or bandwidth. This also explains why 128\,Hz sampling, 1\,\textmu V quantisation and a 40\,Hz
@@ -112,9 +113,10 @@ when the representation becomes one electrode. Valence was not distinguishable f
 chance at any of the four sites ($0.51$--$0.53$ at Fz, Cz, Pz and Oz); four-class
 accuracy was $0.33$--$0.38$, above the $0.25$ chance level but far below the montage;
 and arousal was weakly above chance at Fz, Pz and Oz before correction ($0.56$--$0.57$;
-unadjusted $p\approx0.04$) but not at Cz ($0.56$, $[0.49, 0.62]$); after BH across the
-12 site$\times$target tests these site-level arousal effects are not significant
-($q\approx0.08$) and we treat the sweep as exploratory. With only four midline sites and three features per site, the
+unadjusted $p\approx0.04$) but not at Cz ($0.56$, $[0.49, 0.62]$). The single-Fz arousal
+value survives the six-contrast affective family ($q=0.0496$) but not the 12-test site
+sweep ($q\approx0.079$); we therefore treat the site-level arousal pattern as
+exploratory. With only four midline sites and three features per site, the
 bounded claim is that none of these single-electrode representations approached the
 montage, not that every possible electrode would fail.
 

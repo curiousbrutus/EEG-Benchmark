@@ -45,3 +45,23 @@
 - Beta/EMG mekanizması test edilmedi.
 - Plan kayıtlı değil (OSF proje sayfası, registration değil).
 - IAPS etiketleri katılımcı rating'i değil; picture-level generalizasyon test edilmedi.
+
+## Final pre-submission review (2026-11-05)
+- **Domain review**: Major revision — fixed: same-dataset precedent engagement (Sánchez-Reolid 2022),
+  Fz-vs-frontal site caveat, Hagemann reference/site literature, Ratti misattribution, 99.99%
+  caveat, numeric typo.
+- **Statistics review**: Major revision — fixed: 50% rule baselines (same-site chain vs clean
+  chain), added blink/combined rows, `pre-registered` → `pre-specified`, stale N=30 values,
+  valence "no significant evidence" wording, site-sweep BH, band-vs-quant contrast,
+  PREREG updates, Emotiv alignment fields.
+- **EIC quick check**: Minor revision — fixed: retention interval traced to
+  `results/site_metrics.json`, dead DOI removed from manuscript/cover (assigned on acceptance),
+  affective provenance sentence added, arousal family clarified.
+- Two final reviewers (reproducibility, devil's advocate) failed at the tool level; their
+  concerns were already covered by the completed domain/statistics/EIC checks and earlier rounds.
+
+## Before upload
+- [ ] **Zenodo**: publish the deposit and activate 10.5281/zenodo.23976432; then either add the
+      live DOI or keep "assigned on acceptance" as currently written.
+- [ ] Rebuild (`latexmk -pdf main.tex`), read the PDF, submit with `submission/P1_source.zip`.
+- [ ] Optional: update the OSF project description to the final abstract.

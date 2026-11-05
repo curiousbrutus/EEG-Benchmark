@@ -38,9 +38,9 @@ device-validation claims.
 (including two untested arms and an underpowered exploratory decoding arm) are reported
 explicitly. Data are public (PhysioNet; Zenodo CC BY 4.0). Code and derived results are
 available at https://github.com/curiousbrutus/EEG-Benchmark and on the OSF project
-https://osf.io/8wxqj/; a Zenodo DOI (10.5281/zenodo.23976432) is reserved and will be
-activated before submission. The repository state used for the submission is identified
-by a commit hash in the data manifest.
+https://osf.io/8wxqj/. A Zenodo archive DOI will be assigned on acceptance. The
+repository state used for the submission is identified by a commit hash in the data
+manifest.
 
 We confirm this work is not under consideration elsewhere, has no competing interests,
 and involved no new human participants.
