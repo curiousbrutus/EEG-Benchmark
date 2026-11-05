@@ -2,10 +2,11 @@
 We presented a reproducible degradation benchmark for single-channel and low-cost EEG
 and applied it to two open datasets. The results are conditional and, we think, useful.
 Alpha reactivity survived the acquisition chain almost intact once the reference was
-taken at the same electrode (99.99\% retained), whereas the electrode-site decision cost
+taken at the same electrode (99.99\% retained; a ratio-of-ratios outcome, so gain-like
+steps cancel by construction), whereas the electrode-site decision cost
 about 42\% of eyes-closed alpha power and sensor noise reduced the effect monotonically,
 to about 0.59 of the reference at 0\,dB. Affective valence was decodable from a full high-end
-montage ($0.69$) but fell to chance from a single electrode ($0.52$); arousal survived
+montage ($0.69$) but was not detected from a single electrode ($0.52$); arousal survived
 weakly ($0.56$ above chance but far below $0.68$), and four-class accuracy fell to $0.34$ (above chance but far below the montage). A
 low-cost 14-channel headset performed at a similar level to the high-end montage without
 passing a formal equivalence test. Decomposition showed that the acquisition chain was

@@ -5,7 +5,7 @@ single headline suggests. Alpha reactivity survived the acquisition chain almost
 once the reference was taken at the same electrode (99.99\% retained), while the
 electrode-site decision itself costs about 42\% of eyes-closed alpha power. Affective
 decoding was above chance from the full montage, but it did not survive reduction to one
-electrode: valence fell to chance, arousal remained weakly above chance, and four-class
+electrode: the valence effect was not detected, arousal remained weak, and four-class
 accuracy fell to $0.34$ (above chance but $0.24$ below the montage). The two arms also differ in reference effect size, trial count, feature count and
 estimator, and the alpha ratio is largely invariant by construction to resampling and
 band-limiting. We therefore do not present the contrast as a mechanistic law about
@@ -39,7 +39,7 @@ zero. A $\pm10$-point equivalence test does not pass, however, so the correct cl
 "not statistically distinguishable in this sample", not "equivalent". The comparison
 also confounds channel count with feature count, recording units, epoch window and
 condition arm, and 8 of 20 participants are dropped; it is therefore a sanity check, not
-a device validation. The pre-registered 60\% floor is met by Emotiv arousal but not by
+a device validation. The pre-specified 60\% floor is met by Emotiv arousal but not by
 Emotiv valence, while the high-end arm meets it for valence and arousal but not for the
 four-class target.
 
@@ -50,10 +50,20 @@ suggested that a single channel retained about 87--90\% of the reactivity effect
 this apparent loss was almost entirely a property of the reference: the chain itself
 cost $0.01\%$, while choosing Fz instead of a posterior average cost about 42\% of
 eyes-closed alpha power (arithmetic ratio $0.58$; geometric ratio $0.49$). The two units answer
-different questions and we report both. Any benchmark that compares a single
-site with a whole-head average will reproduce this artefact, and the correction is cheap.
-We recommend same-site referencing as the default for single-channel benchmarks and for
-consumer-EEG validation studies.
+different questions and we report both. This is a known property of scalp power ---
+reference choice and electrode site change absolute band power and can change lateralised
+contrasts \cite{hagemann2001reference} --- but benchmark papers routinely ignore it. Our
+contribution is to quantify its size for single-channel retention and to make same-site
+referencing the primary estimator. We recommend it as the default for single-channel
+benchmarks and consumer-EEG validation studies. A related site caveat points in the same
+direction: Fz is a research midline proxy, not the site used by most single-electrode
+consumer devices, which record frontally (Fp1 in NeuroSky/MindWave, AF7/AF8 in Muse;
+\cite{krigolson2017muse,cannard2021muse}). Frontal sites have less posterior alpha and
+more ocular/muscle contamination, so the measured 42\% site cost is likely an
+underestimate for those devices, and the single-channel affective failure is established
+here for Fz/Cz/Pz/Oz rather than for every possible electrode. The consumer-EEG
+reliability comparison is at Fp1 \cite{rogers2016reliability}, not at Fz, which is why
+we treat the two estimates as related but not interchangeable.
 
 \subsection*{Noise, bandwidth and the blink null}
 The noise arm declined monotonically, and every paired contrast survived FDR control;
@@ -62,15 +72,14 @@ The practical implication is that recording quality and noise control matter mor
 headset's nominal sampling rate or resolution, which changed 8--12\,Hz power by less
 than 1\%. The blink result is a model check rather than a null result about real blinks:
 the injected template has essentially no 8--12\,Hz energy and the same rate was added to
-both conditions, so a small effect was almost guaranteed. The pre-registered blink
-prediction (H1) is therefore untested rather than supported. Real blinks are large,
+both conditions, so a small effect was almost guaranteed. The pre-specified blink prediction (H1) is therefore untested rather than supported. Real blinks are large,
 frontal and asymmetric between eyes-open and eyes-closed recordings, and that
 interaction is the next experiment (see Limitations).
 
 \subsection*{Reliability depends on the timescale}
 Odd and even 2\,s windows are separated by about two seconds, so the coefficient is a
 short-lag stability measure, not a classical reliability coefficient.
-Its value ($r_{SB}=0.02$) says that a momentary alpha estimate is noisy; the block-level
+Its value ($r_{SB}=0.016$) says that a momentary alpha estimate is noisy; the block-level
 ICC ($0.92$) says that stable individual differences are measurable. Published
 consumer-EEG test--retest work reports ICCs around 0.76--0.85 for eyes-closed relative
 power \cite{rogers2016reliability}; our estimate is not directly comparable because it
@@ -123,11 +132,11 @@ interval. Feature counts differ between the full montage (198) and the single ch
 information, dimensionality and site; the single-site failure is bounded to those sites.
 The 0\,dB noise level is defined on broadband variance while the outcome is 8--12\,Hz,
 so the in-band SNR is unreported and part of the attenuation is estimator compression;
-one subject had negative reference reactivity. The analysis plan was not registered,
-several pre-registered items (Fp1/Cz sensitivity, the 60\% practical floor, AUC and
+eight of 109 subjects had negative reference reactivity. The analysis plan was not registered,
+several pre-specified items (Fp1/Cz sensitivity, the 60\% practical floor, AUC and
 median-split outcomes) were dropped or changed, and the study should be read as
 exploratory in the strict sense. The motor arm is invalid because its reference decoder
-did not exceed chance; the equivalence test is a small-sample TOST whose margin exceeds
+did not exceed chance (and is also underpowered); the equivalence test is a small-sample TOST whose margin exceeds
 the achievable half-width for valence and four-class; and the repository has no public
 DOI or remote yet (the availability statement says it will be deposited). A full-subject run, a real single-channel device, a validated
 artifact model and a registration are required before the decision matrix is treated as

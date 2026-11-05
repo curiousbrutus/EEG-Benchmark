@@ -1,17 +1,6 @@
 # P1 — Single-channel and low-cost EEG: what it can and cannot measure
 
-**Manuscript repository.** Source, analysis code, generated figures/tables and the JSON
-files behind every number. Raw data are not included; download instructions are below.
-Compiled manuscript: `main.pdf`.
-
-**Links:** [OSF project](https://osf.io/8wxqj/) ·
-[Zenodo DOI (reserved, activate before submission)](https://doi.org/10.5281/zenodo.23976432) ·
-[GitHub](https://github.com/curiousbrutus/EEG-Benchmark)
-
----
-
-
-**Status:** draft **v3.6** (2026-11-03) — full N=109 alpha arm; round-3 fixes applied; submission package ready.
+**Status:** draft **v3.9** (2026-11-05) — full N=109 alpha arm; final pre-submission review fixes applied.
 **Owner:** Eyyüb Güven · **Branch:** paper production
 **Target venue (verify before submission):** *Behavior Research Methods*.
 

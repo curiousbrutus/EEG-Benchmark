@@ -33,7 +33,7 @@ span. Emotiv epochs run from $-0.2$ to $+2.3$\,s around the aligned sample (the
 BrainVision epochs run 0--2.5\,s), and the same band-power and LDA pipeline is applied.
 The median absolute difference between a log onset and its nearest CSV sample was
 25\,ms (95th percentile 59\,ms, maximum 70\,ms; stored per subject in
-\texttt{results/emotiv.json}), and no trial exceeded the 1\,s rejection threshold. The
+\texttt{results/emotiv.json}), and no trial exceeded the 1\,s alignment screen (this is a timestamp screen, not an amplitude rejection threshold). The
 two condition arms in the archive are not otherwise distinguished. This yields a
 three-way comparison: high-end full montage, low-cost 14-channel headset, and high-end
 data reduced to a single degraded channel.
@@ -72,14 +72,16 @@ site-matching.
 \textbf{A. Alpha reactivity.} Band power (8--12\,Hz) is computed with Welch's method
 (2\,s windows, 50\% overlap) on continuous data; the outcome is the natural-log ratio
 of eyes-closed to eyes-open power, the classical resting-state contrast
-\cite{barry2007eyes}. The primary retention estimator is the geometric mean ratio
-derived from the paired subject-level log difference against the same-site reference
-(Fz in the full recording). A degradation claim is reported as \emph{supported} when
-the \emph{lower} 95\% confidence bound of that retention ratio exceeds 0.50; as
-\emph{not supported} when the lower bound is at or below 0.50; and the decision matrix
-reports the retention interval alongside the verdict. The 50\% threshold is a planned
+\cite{barry2007eyes}. The primary retention estimator is the geometric mean ratio derived from the paired
+subject-level log difference. For the acquisition chain the reference is the same-site
+full recording (Fz in the full montage); for the noise, blink and combined arms the
+reference is the clean single-channel chain, because those manipulations are
+incremental contamination of that chain. A degradation claim is reported as
+\emph{supported} when the \emph{lower} 95\% confidence bound of the relevant retention
+ratio exceeds 0.50; as \emph{not supported} when the lower bound is at or below 0.50;
+and the decision matrix reports the retention interval alongside the verdict. The 50\% threshold is a planned
 convention of this benchmark, not a literature-derived constant, and it is not a formal
-non-inferiority test. The pre-registered 60\% practical floor for balanced accuracy is
+non-inferiority test. The pre-specified 60\% practical floor for balanced accuracy is
 reported separately as a stricter auxiliary criterion. Absolute powers are released so readers can evaluate alternative summaries.
 
 \textbf{B. Motor decoding (exploratory).} Single-trial log band power (8--30\,Hz;
@@ -90,7 +92,8 @@ CSP requires multiple channels, the single-channel condition cannot receive the 
 spatial filter; that asymmetry is part of the constraint quantified here. The arm is
 reported as invalid unless a reference decoder's 95\% CI excludes chance (0.50).
 Because nominal chance levels can be exceeded by chance, interpretation uses empirical
-confidence intervals rather than the theoretical level \cite{combrisson2015chance}.
+confidence intervals rather than the theoretical level
+\cite{combrisson2015chance,billinger2012significance}.
 
 \textbf{C. Affective decoding.} For each recording, log band power in theta (4--8\,Hz),
 alpha (8--12\,Hz) and beta (13--30\,Hz) is extracted per channel and trial; the
@@ -127,7 +130,7 @@ affective family; both raw and adjusted values are released. Mixed-effects model
 not used here, and the exploratory nature of the study is stated explicitly. Equivalence
 between the low-cost and high-end devices is tested with a two one-sided tests (TOST)
 procedure using a $\pm 0.10$ balanced-accuracy margin
-\cite{lakens2017equivalence}.
+\cite{lakens2018equivalence}.
 
 \subsection*{Reproducibility}
 All degradation parameters, random seeds, dataset file hashes (written by

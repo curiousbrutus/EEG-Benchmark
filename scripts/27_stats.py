@@ -34,14 +34,21 @@ def main():
     p_ref=[]; p_chain=[]
     for c in conds:
         v=np.array([r['alpha_reactivity'][c]['log_ratio'] for r in runs])
-        d_ref=v-ref; d_chain=v-chain
-        p_ref.append(float(ttest_rel(v,ref).pvalue)); p_chain.append(float(ttest_rel(v,chain).pvalue))
-        out["alpha"][c]={"vs_ref":ci(d_ref),"vs_chain":ci(d_chain),
-                         "retention_vs_ref_geometric":float(np.exp(d_ref.mean()))}
+        d_ref=v-ref
+        p_ref.append(float(ttest_rel(v,ref).pvalue))
+        entry={"vs_ref":ci(d_ref),"retention_vs_ref_geometric":float(np.exp(d_ref.mean()))}
+        if c != 'fz_128_quant_band':
+            d_chain=v-chain
+            p_chain.append(float(ttest_rel(v,chain).pvalue))
+            entry.update({"vs_chain":ci(d_chain),"retention_vs_chain_geometric":float(np.exp(d_chain.mean()))})
+        out["alpha"][c]=entry
     q_ref=bh(p_ref); q_chain=bh(p_chain)
-    for c,qr,qc,pr,pc in zip(conds,q_ref,q_chain,p_ref,p_chain):
-        out["alpha"][c].update({"p_vs_ref":pr,"q_vs_ref":float(qr),
-                                "p_vs_chain":pc,"q_vs_chain":float(qc)})
+    chain_iter=iter(zip(p_chain,q_chain))
+    for c,qr,pr in zip(conds,q_ref,p_ref):
+        out["alpha"][c].update({"p_vs_ref":pr,"q_vs_ref":float(qr)})
+        if 'vs_chain' in out["alpha"][c]:
+            pc,qc=next(chain_iter)
+            out["alpha"][c].update({"p_vs_chain":pc,"q_vs_chain":float(qc)})
 
     aff=json.loads(pathlib.Path('results/affective.json').read_text())
     rows=aff['recordings']
@@ -59,6 +66,11 @@ def main():
                                 "p_vs_chance":float(tt.pvalue),
                                 "dz":float((np.mean(vals)-chance)/np.std(vals,ddof=1)) if len(vals)>1 else None,
                                 "floor_60pct":bool(c['ci_low']>0.60)}
+    # explicit band-vs-quant incremental contrast (the chain self-row is skipped)
+    quant=np.array([r['alpha_reactivity']['fz_128_quant']['log_ratio'] for r in runs])
+    band=np.array([r['alpha_reactivity']['fz_128_quant_band']['log_ratio'] for r in runs])
+    out['band_vs_quant']={'log':ci(band-quant),'retention':float(np.exp((band-quant).mean())),
+                          'p':float(ttest_rel(band,quant).pvalue)}
     q_aff=bh(p_aff)
     for (name,chance),q in zip(aff_keys,q_aff):
         out["affective"][name]["q_vs_chance"]=float(q)
@@ -69,6 +81,21 @@ def main():
         d=np.array(f)-np.array(s)
         out["affective"][f"{tgt}_full_minus_single"]={"mean":float(d.mean()),
             "ci_low":ci(d)["ci_low"],"ci_high":ci(d)["ci_high"],"p":float(ttest_rel(f,s).pvalue)}
+
+    # site-sweep exploratory tests (4 sites x 3 targets), BH across all 12
+    decomp=json.loads(pathlib.Path('results/affective_decomp.json').read_text())
+    site_tests=[]
+    for tgt,chance in [('valence',0.5),('arousal',0.5),('quadrant',0.25)]:
+        for site in ['single_Fz','single_Cz','single_Pz','single_Oz']:
+            vals=[r['targets'][tgt][site] for r in decomp['recordings'] if r['targets'][tgt].get(site) is not None]
+            if len(vals)<3: continue
+            tt=ttest_1samp(vals,chance)
+            site_tests.append({'target':tgt,'site':site,'mean':float(np.mean(vals)),
+                               'p':float(tt.pvalue),'n':len(vals)})
+    qs=bh([t['p'] for t in site_tests])
+    for t,q in zip(site_tests,qs):
+        t['q']=float(q)
+    out['site_sweep']=site_tests
 
     dc=json.loads(pathlib.Path('results/device_compare.json').read_text())
     out["device_equivalence"]={}

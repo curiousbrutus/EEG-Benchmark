@@ -56,8 +56,7 @@ def main() -> None:
         "motor_decoding_balanced_accuracy": decoding,
         "split_half_reliability_spearman_brown": reliability,
         "deap": runs[0]["deap"],
-        "note": "Preliminary: EEGBCI only, imagined left/right hand runs 4/8/12. "
-                "DEAP affective decoding not yet available (manual data access).",
+        "note": "Final: EEGBCI alpha/reliability arms (N=109); motor decoding is exploratory N=10; affective arms are in results/affective.json and results/emotiv.json.",
     }
     pathlib.Path("results").mkdir(exist_ok=True)
     pathlib.Path("results/summary.json").write_text(json.dumps(summary, indent=2))

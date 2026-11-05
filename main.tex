@@ -1,6 +1,6 @@
 % =====================================================================
 %  P1 — Single-channel consumer EEG: what it can and cannot measure
-%  Status: draft v3.0 (2026-11-03). Every number comes from results/*.json.
+%  Status: draft v3.9 (2026-11-05). Every number comes from results/*.json.
 %  Analysis plan is planned but NOT registered (see PREREGISTRATION.md).
 %  Build: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 % =====================================================================
@@ -21,7 +21,7 @@
 A Reproducible Degradation Benchmark and Reporting Protocol}
 \author{Eyy\"ub G\"uven\thanks{Cyber Cognition Lab (pre-incorporation), \c{C}orlu, T\"urkiye.
   \texttt{eyyub.gvn@gmail.com}. ORCID 0009-0005-6017-8622.}}
-\date{Draft v3.0 --- \today}
+\date{Draft v3.9 --- \today}
 
 \begin{document}
 \maketitle
@@ -37,14 +37,15 @@ synthetic blinks at 5/15/30 per minute and a combined condition --- and measures
 standard analyses survive. Using all 109 subjects of the EEG Motor Movement/Imagery Dataset,
 alpha reactivity was essentially unaffected by the acquisition chain once the reference
 was taken at the same electrode (99.99\% retained; 95\% CI of the retention ratio
-$[0.9996, 1.0001]$), whereas the electrode-site choice cost about 42\% of eyes-closed
+$[0.9996, 1.0001]$; the outcome is a ratio of ratios, so gain-like steps cancel by
+construction), whereas the electrode-site choice cost about 42\% of eyes-closed
 alpha power (Fz/posterior ratio $0.58$). Noise reduced the effect monotonically, to
 about $0.59$ of the reference at 0\,dB (0.68 of the clean chain); a simple additive blink model changed it by
-about 0.3\%, which reflects the construction of the model rather than a finding about
+about 0.2\%, which reflects the construction of the model rather than a finding about
 real blinks. Using 18 high-end BrainVision recordings from an open affective dataset,
 valence, arousal and four-quadrant decoding from the full montage reached $0.69$,
 $0.68$ and $0.58$ (chance $0.50$ and $0.25$). Reducing the same data to one electrode
-removed the valence effect ($0.52$, not distinguishable from chance), reduced arousal
+did not detect the valence effect from one electrode ($0.52$; no significant evidence above chance, equivalence not tested), reduced arousal
 to $0.56$ (borderline after correction) and four-class accuracy to $0.34$ (above
 chance but far below the montage); valence was not distinguishable from chance at any
 single site, and four-class

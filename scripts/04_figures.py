@@ -43,14 +43,14 @@ def fig_retention() -> None:
 
     _paired_doc = load("paired.json")
     n_subj = _paired_doc.get("n_subjects", 0)
-    paired = _paired_doc["conditions"]
     import math
+    infer = load("inference.json")["alpha"]
     labels, means, los, his = [], [], [], []
-    for key in ["fz_128_quant_band", "fz_noise20", "fz_noise10", "fz_noise5",
-                "fz_noise0", "fz_blink5", "fz_blink15", "fz_blink30", "fz_combined"]:
-        if key not in paired:
+    for key in ["fz_noise20", "fz_noise10", "fz_noise5", "fz_noise0",
+                "fz_blink5", "fz_blink15", "fz_blink30", "fz_combined"]:
+        if key not in infer or "vs_chain" not in infer[key]:
             continue
-        d = paired[key]["paired_difference_log"]
+        d = infer[key]["vs_chain"]
         labels.append(SHORT.get(key, key))
         m = math.exp(d["mean"]); lo = math.exp(d["ci_low"]); hi = math.exp(d["ci_high"])
         means.append(m); los.append(m - lo); his.append(hi - m)

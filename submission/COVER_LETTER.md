@@ -18,8 +18,8 @@ EEGBCI dataset, alpha reactivity survived the acquisition chain almost intact on
 reference was taken at the same electrode (99.99% retained), while the electrode-site
 choice cost about 42% of eyes-closed alpha power and noise reduced the effect
 monotonically (to about 0.59 of the reference at 0 dB). Using an open low-cost-versus-high-end
-affective dataset, valence was decodable from a full montage (0.69) but fell to chance
-from a single electrode (0.52); arousal survived weakly (0.56 vs 0.68). A low-cost
+affective dataset, valence was decodable from a full montage (0.69) but was not
+detected from a single electrode (0.52); arousal survived weakly (0.56 vs 0.68). A low-cost
 14-channel headset performed at a similar level to the high-end montage without passing
 a formal equivalence test. A decomposition showed that the acquisition chain was
 harmless, that valence was not distinguishable from chance at any single site and the

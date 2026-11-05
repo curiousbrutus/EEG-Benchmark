@@ -3,7 +3,9 @@
 Low-cost EEG headsets are now sold as attention trainers, relaxation aids, sleep
 gadgets and emotion sensors. The hardware is real: consumer devices can record above
 the noise floor of the relevant bands, and some have been validated against research
-amplifiers for event-related potentials \cite{krigolson2017muse,ratti2017comparison}.
+amplifiers for event-related potentials \cite{krigolson2017muse,badcock2015emotiv}, while
+resting-state comparisons report differences in spectral estimates and in test--retest
+behaviour across systems \cite{ratti2017comparison,cannard2021muse}.
 What is usually missing is the information needed to decide whether a given recording
 supports a given claim: which electrode, which sampling rate, which filters, how
 artifacts were handled, how many trials, and how the feature relates to a full-montage
@@ -46,8 +48,8 @@ publicly documented and have known acquisition parameters.
         essentially unaffected by the acquisition chain once the reference is
         site-matched (99.99\% retained), so the chain itself is not the limiting factor;
         electrode choice and noise are. Affective
-        valence decoding is above chance from a full montage ($0.69$) but falls to
-        chance from a single electrode ($0.52$); arousal is reduced ($0.68$ to $0.56$)
+        valence decoding is above chance from a full montage ($0.69$) but is
+        not detected from a single electrode ($0.52$); arousal is reduced ($0.68$ to $0.56$)
         rather than abolished.
   \item An \textbf{open reporting checklist} for single-channel studies, derived from
         COBIDAS MEEG \cite{pernet2020cobidas}, EEG-BIDS \cite{pernet2019bids} and, as a

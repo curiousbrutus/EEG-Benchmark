@@ -149,6 +149,9 @@ def analyse(subject: int):
     y = np.array(labels)
     out = {"subject": subject, "log": lp.name, "n_trials": len(labels),
            "alignment_median_ms": float(np.median(gaps) * 1000) if gaps else None,
+           "alignment_p95_ms": float(np.percentile(gaps, 95) * 1000) if gaps else None,
+           "alignment_max_ms": float(np.max(gaps) * 1000) if gaps else None,
+           "alignment_rejection_seconds": 1.0,
            "n_neutral_ignored": 0, "targets": {}}
     out["targets"]["quadrant"] = decode(F, y)
     for name, pos in (("valence", {"HVHA","HVLA"}), ("arousal", {"HVHA","LVHA"})):

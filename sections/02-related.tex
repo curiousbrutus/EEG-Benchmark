@@ -39,21 +39,34 @@ artifact handling as part of the independent variable, not as a preprocessing de
 \subsection*{Feature validity and open data}
 Band-power features are the workhorse of consumer-EEG claims, and their test--retest
 reliability is a prerequisite for any individual-level interpretation. Open datasets
-with repeated conditions and affective ratings allow reliability and decoding to be
-measured against a known ground truth rather than asserted
-\cite{schalk2009eegbci,koelstra2012deap}. We build directly on the EEGBCI resources and
+with documented conditions and affective labels allow reliability and decoding to be
+measured rather than asserted \cite{schalk2009eegbci,koelstra2012deap}; the labels are
+normative picture categories, not participants' own reports. We build directly on the EEGBCI resources and
 on an open affective dataset that contains both low-cost and high-end recordings
 \cite{sanchezreolid2022emotion,sanchezreolid2025dataset}; DEAP and DREAMER are discussed
 as alternatives that could not be used. We report every degradation step so that a
 reader can map our results onto their own acquisition.
+
+The affective dataset used here has its own decoding study
+\cite{sanchezreolid2022emotion}, which compared the low-cost and high-end systems under
+three channel-count and sampling-rate scenarios and reported F1 values for four-class
+classification. Our analysis is not a replication of that study: we use balanced
+accuracy, within-subject cross-validation, a fully crossed degradation chain that
+includes quantisation, noise and blink arms, a same-site reference, and claim-level
+decision rules. The F1 values in the source study and the balanced accuracies here are
+therefore not directly comparable, and we do not interpret our lower values as
+contradicting it. What this paper adds is the decomposition of where performance goes
+when the representation is reduced, not a new headline accuracy for the dataset.
 
 \subsection*{Positioning}
 Relative to device-comparison work, our contribution is analysis-centred and
 degradation-based. Relative to reporting standards, it is quantitative: rather than
 saying which variables to report, it estimates what each variable is worth under
 single-channel constraints. To our knowledge, no existing benchmark reports, for the
-same open datasets, how alpha reactivity, single-trial decoding, reliability and blink
-susceptibility change as a function of explicit consumer-hardware degradations.
+same open datasets, how alpha reactivity, single-trial decoding and reliability change
+as a function of explicit consumer-hardware degradations, and which of those changes
+survive a claim-level decision rule. Blink susceptibility is a stated limitation of this
+version and is not claimed as a measured outcome.
 
 \subsection*{Benchmarking methodology}
 The idea of comparing analysis pipelines on shared datasets is established in BCI

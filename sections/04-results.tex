@@ -3,7 +3,7 @@
 % icc.json (N=10), csp.json (N=10), affective.json (N=18) dosyalarindan alindi.
 
 \subsection*{Channel reduction, bandwidth and quantisation do not degrade alpha reactivity}
-At the full montage the eyes-closed/eyes-open alpha log ratio was $1.00$
+At the full montage the eyes-closed/eyes-open alpha log ratio was $0.91$
 (95\% CI $[0.78, 1.04]$; $N=109$). The Fz single-channel chain --- single electrode,
 128\,Hz, 1\,\textmu V quantisation, 1--40\,Hz band-limiting --- gave $0.77$
 ($[0.65, 0.89]$). Comparing the single channel with the scalp average, the paired
@@ -19,10 +19,10 @@ $-0.0001$ ($[-0.0004, 0.0001]$), i.e.\ \textbf{99.99\%} of the reactivity effect
 retained. Second, the electrode-site decision is not free: eyes-closed alpha power at Fz
 is only about \textbf{58\%} of the posterior-channel average (ratio $0.58$,
 $[0.52, 0.63]$). A single-channel device therefore pays for its site choice, not for its
-sampling or bandwidth. This also explains why 128\,Hz sampling, 1\,\textmu V
-quantisation and a 40\,Hz low-pass changed the estimate by less than $0.01$: for
-8--12\,Hz Welch power these operations are close to null, consistent with earlier
-filter work \cite{tanner2015filters}.
+sampling or bandwidth. This also explains why 128\,Hz sampling, 1\,\textmu V quantisation and a 40\,Hz
+low-pass left the estimate essentially unchanged: the band versus quantisation contrast
+was $-0.00012$ (retention $0.9999$, $p=0.007$), which is negligible for 8--12\,Hz Welch
+power and consistent with earlier filter work \cite{tanner2015filters}.
 
 Table~\ref{tab:alpha} reports the condition means and Figure~\ref{fig:pipeline}
 shows the degradation grid, while Figure~\ref{fig:retention} shows retention.
@@ -40,18 +40,22 @@ shows the degradation grid, while Figure~\ref{fig:retention} shows retention.
 
 \subsection*{Noise is the constraint that matters; blinks alone do not shift alpha reactivity}
 Noise produced a monotonic dose-response: $0.76$ at 20\,dB, $0.71$ at 10\,dB, $0.60$
-at 5\,dB and $0.38$ at 0\,dB, corresponding to geometric retention of $0.86$, $0.82$,
-$0.73$ and $0.59$ of the full-montage reference. The incremental paired contrasts
+at 5\,dB and $0.38$ at 0\,dB. Relative to the clean single-channel chain (the correct
+baseline for an incremental contamination), the geometric retention was $0.99$, $0.94$,
+$0.85$ and $0.68$; relative to the full-montage reference it was $0.86$, $0.82$, $0.73$
+and $0.59$. The incremental paired contrasts
 against the clean chain (which isolate the noise manipulation) were $-0.008$
 ($[-0.011, -0.006]$) at 20\,dB, $-0.064$ ($[-0.075, -0.052]$) at 10\,dB, $-0.169$
 ($[-0.197, -0.140]$) at 5\,dB and $-0.384$ ($[-0.441, -0.328]$) at 0\,dB; all survive
 Benjamini--Hochberg correction across the condition family ($q<0.001$). The three blink arms were almost identical to
 the clean chain ($0.77$ at 5 and 15/min, $0.77$ at 30/min). The incremental contrast (30 blinks/min minus
 clean chain) was $-0.002$ ($[-0.003, -0.001]$; $q=0.0005$), a change of about 0.2\% that
-is statistically detectable but negligible in size; the combined arm ($0.34$) was driven
+is statistically detectable but negligible in size; the combined arm ($0.39$) was driven
 by the 0\,dB noise it contains. The injected template has almost no energy in 8--12\,Hz
 and the same rate was added to both conditions, so this null is close to guaranteed by
-construction and should be read as a model check, not as evidence about real blinks.
+construction and should be read as a model check, not as evidence about real blinks;
+ocular artifacts are known to bias broadband power in ways this additive model does not
+represent \cite{hagemann2001ocular}.
 The template has almost no 8--12\,Hz energy and the same rate is added to both
 conditions, so the null is close to guaranteed and is not evidence about real ocular
 contamination \cite{gratton1983ocular,croft2000ocular,whitham2007emg}.
@@ -59,10 +63,10 @@ contamination \cite{gratton1983ocular,croft2000ocular,whitham2007emg}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\linewidth]{figures/fig2_retention.pdf}
-  \caption{Alpha reactivity retained relative to the scalp-average reference, by
-  condition ($N=109$; geometric retention relative to the full-montage reference and 95\% CI). The dashed line is the
-  planned 50\% decision threshold. Noise reduces retention monotonically; blinks
-  alone do not.}
+  \caption{Alpha reactivity retained relative to the clean single-channel chain, by
+  condition ($N=109$; geometric retention and 95\% CI). The dashed line is the planned
+  50\% decision threshold. Noise reduces retention monotonically; the blink arm is a
+  model check and is not a real-blink test.}
   \label{fig:retention}
 \end{figure}
 
@@ -72,7 +76,7 @@ recordings (18 recordings from 20 participants; about 10 trials per quadrant). F
 full montage, valence was decoded at $0.69$ ($[0.62, 0.76]$), arousal at $0.68$
 ($[0.60, 0.75]$) and the four quadrants at $0.58$ ($[0.49, 0.67]$); the binary
 intervals exclude chance and the four-class interval is above it. From the same data
-reduced to the single-channel chain, valence fell to $0.52$ ($[0.47, 0.57]$) --- chance
+reduced to the single-channel chain, valence showed no significant evidence of above-chance decoding ($0.52$; $[0.47, 0.57]$, $p=0.45$)
 --- arousal to $0.56$ ($[0.50, 0.62]$), which remains above chance but far below the
 montage, and the four quadrants to $0.34$ ($[0.27, 0.41]$). The paired full-minus-single
 differences were $+0.17$ ($[0.10, 0.24]$) for valence, $+0.12$ ($[0.03, 0.20]$) for
@@ -107,8 +111,10 @@ four-class accuracy at $0.58$--$0.59$ and valence at $0.69$--$0.70$. The loss ap
 when the representation becomes one electrode. Valence was not distinguishable from
 chance at any of the four sites ($0.51$--$0.53$ at Fz, Cz, Pz and Oz); four-class
 accuracy was $0.33$--$0.38$, above the $0.25$ chance level but far below the montage;
-and arousal stayed weakly above chance at Fz, Pz and Oz ($0.56$--$0.57$) but not at Cz
-($0.56$, $[0.49, 0.62]$). With only four midline sites and three features per site, the
+and arousal was weakly above chance at Fz, Pz and Oz before correction ($0.56$--$0.57$;
+unadjusted $p\approx0.04$) but not at Cz ($0.56$, $[0.49, 0.62]$); after BH across the
+12 site$\times$target tests these site-level arousal effects are not significant
+($q\approx0.08$) and we treat the sweep as exploratory. With only four midline sites and three features per site, the
 bounded claim is that none of these single-electrode representations approached the
 montage, not that every possible electrode would fail.
 
@@ -175,19 +181,15 @@ that were estimated.
     \hline
     Claim & Evidence & Verdict \\
     \hline
-    Alpha reactivity survives the acquisition chain & Lower 95\% bound of retention 0.9996 & Supported \\
-    Alpha reactivity survives 20--5\,dB noise & Retention 0.86--0.73; retention lower bounds $>$ 0.50; BH $q<0.001$ & Supported \\
-    Alpha reactivity survives 0\,dB noise & Retention 0.59; lower 95\% bound 0.54 $>$ 0.50; attenuated & Supported (attenuated) \\
-    Affective decoding needs a montage & Full 0.69/0.68/0.58; single Fz 0.52/0.56/0.34; valence not distinguishable from chance & Supported for valence; partial for arousal \\
-    Low-cost 14-channel equals the high-end montage & matched $N=12$: 0.67/0.71 vs 0.73/0.66; TOST $p=0.31/0.14/0.23$ at $\pm0.10$ & Not established \\
-    Montage advantage is purely cortical & Beta-only 0.70/0.62; theta+alpha 0.60/0.46; no EMG measure & Not supported (possible EMG contribution) \\
-    Any single site reaches the montage & Fz/Cz/Pz/Oz: valence 0.51--0.53 (chance); four-class 0.33--0.38 (above 0.25) & None reached the montage; bounded claim \\
-    Blink bias in the additive model & Template spectrally orthogonal and symmetric across conditions & Untested (model cannot test H1) \\
-    Pre-registered 60\% balanced-accuracy floor & Valence full passes (lower 0.62); four-class full fails (lower 0.49); Emotiv valence fails (lower 0.57); arousal full/Emotiv pass & Mixed; reported as auxiliary criterion \\
+    Alpha reactivity survives the acquisition chain & Same-site reactivity retention lower bound 0.9996 & Supported \\
+    Alpha reactivity survives 20--5\,dB noise & Clean-chain retention lower bounds 0.99, 0.93, 0.82 & Supported \\
+    Alpha reactivity survives 0\,dB noise & Clean-chain retention 0.68 [0.64, 0.72] & Supported (attenuated) \\
+    Combined 0\,dB + 30 blinks/min & Clean-chain retention 0.68 [0.65, 0.71] & Supported (attenuated) \\
+    Blinks bias alpha reactivity & Clean-chain retention 0.998 in a spectrally orthogonal, symmetric model & Not a real-blink test (H1 untested) \\
+    Pre-specified 60\% balanced-accuracy floor & Valence full passes (lower 0.62); four-class full fails (lower 0.49); Emotiv valence fails (lower 0.57); arousal full/Emotiv pass & Mixed; reported as auxiliary criterion \\
     Single-trial motor decoding above chance & Reference decoder did not exceed 0.50 & Invalid (not testable) \\
-    Momentary individual-level alpha reliability & Short-lag stability $r_{SB}=0.02$ & Not supported \\
+    Momentary individual-level alpha reliability & Short-lag stability $r_{SB}=0.016$ & Not supported \\
     Stable individual alpha level & ICC across runs 0.92 (no CI) & Supported (block-level) \\
-    Band-ratio robustness to blinks & Not analysed & Untested \\
     \hline
   \end{tabular}
 \end{table}
@@ -197,5 +199,5 @@ that were estimated.
 affective arm uses 18 high-end recordings and 12 low-cost Emotiv recordings; the Emotiv
 alignment relies on wall-clock timestamps and 8 participants are dropped. The
 full-montage affective advantage is partly beta-band and may include a muscular
-contribution. The motor arm is underpowered; H5 is untested. These scope limits are
+contribution. The motor arm is invalid (reference at chance) and underpowered; H5 is untested. These scope limits are
 stated in the Discussion and are not treated as results.

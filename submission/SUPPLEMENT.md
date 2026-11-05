@@ -27,7 +27,7 @@ each script; the environment is pinned in `requirements.lock.txt`.
 exploratory motor arm; no test–retest ICC; BH-FDR applied in v2.0.
 
 ## S5. Auxiliary 60% threshold and retention bounds
-Using the lower 95% bound of balanced accuracy against the pre-registered 60% practical
+Using the lower 95% bound of balanced accuracy against the pre-specified 60% practical
 floor: full-montage valence passes (0.62), full-montage four-class fails (0.49), single
 sites fail, Emotiv valence fails (0.57) and Emotiv arousal passes (0.63), high-end
 arousal passes (0.60). Retention lower bounds for the alpha grid: chain 0.999; 20 dB

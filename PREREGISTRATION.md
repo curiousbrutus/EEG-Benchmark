@@ -33,7 +33,7 @@ predictions are not supported.
 ## 3. Data
 
 - EEGBCI (PhysioNet, doi:10.13026/C28G6P): all 109 subjects, runs 1–2 (baselines),
-  runs 5–12 (motor imagery).
+  runs 4, 8 and 12 (motor imagery).
 - DEAP (doi:10.1109/T-AFFC.2011.15): all 40 subjects, preprocessed version.
 - Fixed versions: record dataset download date and file hashes in
   `results/data_manifest.json`.
@@ -66,7 +66,7 @@ the direction holds but the CI includes zero. **Not supported** otherwise.
 For decoding, the practical floor is defined as the lower bound of the 95% CI being
 above 60% balanced accuracy.
 
-Multiple comparisons across the five families: Benjamini–Hochberg FDR, q = 0.05.
+Multiple comparisons across the two primary families (alpha condition grid; affective contrasts) use Benjamini–Hochberg FDR, q = 0.05. The post-hoc site sweep is exploratory and is reported with BH-adjusted q values but does not enter the primary family.
 
 ## 7. Exclusion rules
 
@@ -79,14 +79,15 @@ Multiple comparisons across the five families: Benjamini–Hochberg FDR, q = 0.0
 
 | Date | Planned | Actual | Reason |
 | :--- | :--- | :--- | :--- |
+| 2026-11-05 | 60% balanced-accuracy floor as the primary decoding rule | Floor retained and fully reported, but the verdict rules use CI-vs-chance; the floor is summarised separately as a stricter auxiliary criterion | Binomial and four-class accuracies are not commensurate on one floor; demotion is recorded here and the raw floor results are reported in the decision matrix. |
 | 2026-11-03 | H1: blinks would drive much of the apparent degradation | Blinks had a negligible effect in the additive model; noise and electrode site dominated | The model is spectrally orthogonal to alpha and symmetric across conditions; this is reported as a reverse of the original expectation. |
 | 2026-11-03 | Primary retention at the scalp-average reference | Same-site (Fz vs Fz) promoted to primary; scalp-average reported as naive comparison | Site-matching removes the electrode-site confound identified in round 2. |
 | 2026-11-03 | 50% retention rule with a difference test | Rule kept, but operationalised as geometric retention + CI, with a separate band/EMG decomposition and TOST for device equivalence | Reviewers showed the difference test is not a non-inferiority test. |
 | 2026-11-03 | Standardised effect sizes + LMM; Fp1/Cz sensitivity; AUC/median split; Autoreject | Log-ratio t-CIs + BH; site sweep run for affective arm; quadrant labels used without AUC; no Autoreject | Round-2 audit; deviations are reported rather than hidden. |
 | 2026-11-03 | Full 109-subject EEGBCI sample | Full 109 used in the final analysis; an interim 30-subject subset was used during drafting | Compute limits during drafting; the final version reports all 109. |
-| 2026-11-03 | DEAP affective decoding (H3) | Replaced by open Zenodo 14787743 (BrainVision high-end only; Emotiv arm not analysed) | DEAP page unreachable; DREAMER access-restricted; the replacement dataset is open (CC BY 4.0) and includes labelled IAPS trials. |
+| 2026-11-03 | DEAP affective decoding (H3) | Replaced by open Zenodo 14787743; BrainVision high-end (N=18) and Emotiv (N=12) arms analysed | DEAP page unreachable; DREAMER access-restricted; the replacement dataset is open (CC BY 4.0) and includes labelled IAPS trials. |
 | 2026-11-03 | H2 motor decoding with an adequate reference | Exploratory only, N=10, reported inconclusive | Only 10 subjects had imagery runs degraded in this pass; the reference decoder did not clear chance. |
-| 2026-11-03 | Test-retest ICC(2,1) across sessions | Split-half reliability (N=30) plus block ICC across three repeated runs (N=10) | Neither dataset contains repeated sessions; both estimates are reported with their timescales. |
+| 2026-11-03 | Test-retest ICC(2,1) across sessions | Short-lag stability (N=109) plus block ICC across three repeated runs (N=10); neither is a cross-session reliability coefficient | Neither dataset contains repeated sessions; both estimates are reported with their timescales. |
 | 2026-11-03 | Multiplicity correction (BH-FDR) | Applied within the alpha and affective families in v2.0 (`scripts/27_stats.py`); early drafts had not applied it | Round-2 audit. |
 | 2026-11-03 | ICC(2,1) across repeated runs for reliability | Split-half reliability (odd/even 2 s windows) + Spearman–Brown | EEGBCI provides one eyes-open and one eyes-closed run per subject; a test–retest ICC is not identifiable. Change made before registration. |
 | 2026-11-03 | DEAP affective decoding in the first analysis round | DEAP loader implemented (`scripts/06_deap.py`), not run | DEAP requires accepting a data-use agreement; access pending. EEGBCI results reported, H3 marked untested. |

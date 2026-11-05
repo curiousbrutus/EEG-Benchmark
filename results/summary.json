@@ -216,5 +216,5 @@
     "reason": "DEAP requires accepting the data-use agreement; place files under data/raw/deap/",
     "script": "scripts/06_deap.py"
   },
-  "note": "Preliminary: EEGBCI only, imagined left/right hand runs 4/8/12. DEAP affective decoding not yet available (manual data access)."
+  "note": "Final: EEGBCI alpha/reliability arms (N=109); motor decoding is exploratory N=10; affective arms are in results/affective.json and results/emotiv.json."
 }
