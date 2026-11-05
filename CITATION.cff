@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "What Single-Channel and Low-Cost EEG Can and Cannot Measure: A Reproducible Degradation Benchmark and Reporting Protocol"
+message: "If you use this software or the derived results, please cite the manuscript."
+authors:
+  - family-names: "Güven"
+    given-names: "Eyyüb"
+    orcid: "https://orcid.org/0009-0005-6017-8622"
+type: software
+license: MIT
+repository-code: "https://github.com/curiousbrutus/EEG-Benchmark"
+url: "https://osf.io/8wxqj/"

@@ -1,0 +1,113 @@
+% =====================================================================
+%  P1 — Single-channel consumer EEG: what it can and cannot measure
+%  Status: draft v3.0 (2026-11-03). Every number comes from results/*.json.
+%  Analysis plan is planned but NOT registered (see PREREGISTRATION.md).
+%  Build: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{caption}
+\usepackage{float}
+
+\title{What Single-Channel and Low-Cost EEG Can and Cannot Measure:\\
+A Reproducible Degradation Benchmark and Reporting Protocol}
+\author{Eyy\"ub G\"uven\thanks{Cyber Cognition Lab (pre-incorporation), \c{C}orlu, T\"urkiye.
+  \texttt{eyyub.gvn@gmail.com}. ORCID 0009-0005-6017-8622.}}
+\date{Draft v3.0 --- \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Low-cost EEG headsets are used to make claims about attention, relaxation, sleep and
+emotion, usually without the information needed to judge whether a recording can
+support them. We present a reproducible benchmark that degrades open multi-channel
+recordings to single-channel consumer conditions --- one electrode, 128\,Hz sampling,
+1\,\textmu V quantisation, 1--40\,Hz band-limiting, pink sensor noise at 20/10/5/0\,dB,
+synthetic blinks at 5/15/30 per minute and a combined condition --- and measures which
+standard analyses survive. Using all 109 subjects of the EEG Motor Movement/Imagery Dataset,
+alpha reactivity was essentially unaffected by the acquisition chain once the reference
+was taken at the same electrode (99.99\% retained; 95\% CI of the retention ratio
+$[0.9996, 1.0001]$), whereas the electrode-site choice cost about 42\% of eyes-closed
+alpha power (Fz/posterior ratio $0.58$). Noise reduced the effect monotonically, to
+about $0.59$ of the reference at 0\,dB (0.68 of the clean chain); a simple additive blink model changed it by
+about 0.3\%, which reflects the construction of the model rather than a finding about
+real blinks. Using 18 high-end BrainVision recordings from an open affective dataset,
+valence, arousal and four-quadrant decoding from the full montage reached $0.69$,
+$0.68$ and $0.58$ (chance $0.50$ and $0.25$). Reducing the same data to one electrode
+removed the valence effect ($0.52$, not distinguishable from chance), reduced arousal
+to $0.56$ (borderline after correction) and four-class accuracy to $0.34$ (above
+chance but far below the montage); valence was not distinguishable from chance at any
+single site, and four-class
+accuracy stayed at $0.33$--$0.38$ across Fz, Cz, Pz and Oz. A band control showed that
+the full-montage advantage is partly carried by beta-band features (theta+alpha only:
+$0.60$ valence, $0.46$ four-class; beta only: $0.70$ and $0.62$), a pattern consistent
+with a possible muscular contribution rather than proof of a cortical mechanism. A
+low-cost 14-channel headset performed at a similar level to the matched high-end
+montage ($0.67$/$0.71$ versus $0.73$/$0.66$ on the 12 shared participants), although a
+$\pm10$-point equivalence test did not pass. Short-lag alpha stability was low
+($r_{SB}=0.016$) while block-level alpha power was stable (ICC(2,1)$=0.92$), and the
+motor arm was invalid because its reference decoder did not exceed chance. The
+deliverable is a decision matrix, a single-channel reporting checklist, and a seeded
+analysis pipeline with the JSON files behind every number; a public archive DOI will be
+deposited before publication.
+\end{abstract}
+
+\noindent\textbf{Keywords:} consumer EEG, single-channel, reproducibility, benchmark,
+affective decoding, reporting standards
+
+\section{Introduction}
+\input{sections/01-introduction}
+
+\section{Related Work}
+\input{sections/02-related}
+
+\section{Methods}
+\input{sections/03-methods}
+
+\section{Results}
+\input{sections/04-results}
+
+\section{Discussion}
+\input{sections/05-discussion}
+
+\section{Conclusion}
+\input{sections/06-conclusion}
+
+\section*{Data and code availability}
+All datasets are public. The EEG Motor Movement/Imagery Dataset is available from
+PhysioNet (\href{https://doi.org/10.13026/C28G6P}{doi:10.13026/C28G6P}). The affective
+dataset is available from Zenodo under CC BY 4.0
+(\href{https://doi.org/10.5281/zenodo.14787743}{doi:10.5281/zenodo.14787743}). DEAP was
+not used: its download page was unreachable during this work, and the DREAMER record is
+access-restricted \cite{katsigiannis2018dreamer}. The analysis repository (degradation pipeline, analysis scripts,
+seeds, environment file and the JSON files behind every number) is public at
+\href{https://github.com/curiousbrutus/EEG-Benchmark}{github.com/curiousbrutus/EEG-Benchmark}
+and mirrored on the OSF project page \href{https://osf.io/8wxqj/}{osf.io/8wxqj}. A
+Zenodo DOI (\href{https://doi.org/10.5281/zenodo.23976432}{10.5281/zenodo.23976432}) is
+reserved for the archive and will be activated for the final version; the commit hash
+used for this draft is recorded in \texttt{results/data\_manifest.json}. The single-channel
+reporting checklist is included as \texttt{CHECKLIST.md}. No new human participants were
+recorded.
+
+\section*{Author contributions}
+Conceptualization, methodology, software, analysis, writing: E.G.
+
+\section*{Acknowledgements}
+No funding was received for this work. The author declares no competing interests.
+Device-related collaboration and co-authorship will be declared with written permission
+if added.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

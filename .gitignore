@@ -1,0 +1,21 @@
+# raw and derived data are not distributed
+data/
+*.fif
+*.edf
+*.rar
+*.eeg
+*.vhdr
+*.vmrk
+*.edf
+# build artefacts
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.toc
+*.synctex.gz
+__pycache__/
+.env

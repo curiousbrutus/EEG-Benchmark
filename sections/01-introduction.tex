@@ -1,0 +1,61 @@
+% 01-introduction — v1.0
+\subsection*{Consumer EEG is everywhere; its evidence base is not}
+Low-cost EEG headsets are now sold as attention trainers, relaxation aids, sleep
+gadgets and emotion sensors. The hardware is real: consumer devices can record above
+the noise floor of the relevant bands, and some have been validated against research
+amplifiers for event-related potentials \cite{krigolson2017muse,ratti2017comparison}.
+What is usually missing is the information needed to decide whether a given recording
+supports a given claim: which electrode, which sampling rate, which filters, how
+artifacts were handled, how many trials, and how the feature relates to a full-montage
+reference.
+
+This gap has two consequences. First, results are hard to reproduce: a claim such as
+"alpha power increases during relaxation" can be produced by a well-configured
+research system or by a badly filtered consumer recording, and the paper often does not
+let a reader tell the difference. Second, the same gap makes it easy to overclaim: a
+single frontal channel measuring a mixture of cortical activity, eye movements and
+muscle noise \cite{whitham2007emg} is presented as if it measured a specific cognitive
+process.
+
+\subsection*{Why a benchmark rather than another device comparison}
+Device-comparison studies answer "is headset X close to amplifier Y?" under one
+laboratory protocol. They do not answer the question a reader of a consumer-EEG paper
+actually has: \emph{given this acquisition setup, which of the standard analyses still
+work?} Answering that requires systematically degrading high-quality recordings along
+the dimensions consumer hardware changes --- channel count, sampling rate, amplitude
+resolution, bandwidth, noise, ocular contamination --- and measuring which analyses
+survive, with a full-montage analysis as the reference ceiling.
+
+Open datasets make this possible without new participants. The EEG Motor
+Movement/Imagery Dataset provides 109 subjects, 64 channels and both eyes-open and
+eyes-closed baselines \cite{schalk2009eegbci}; an open low-cost-versus-high-end
+affective dataset provides labelled emotional trials recorded with a high-end system
+\cite{sanchezreolid2022emotion,sanchezreolid2025dataset}. Both are widely used,
+publicly documented and have known acquisition parameters.
+
+\subsection*{Contributions}
+\begin{enumerate}
+  \item A \textbf{reproducible degradation pipeline} that converts multi-channel
+        recordings into single-channel consumer conditions in explicit, separately
+        reported steps (channel selection, 128\,Hz resampling, 1\,\textmu V
+        quantisation, 1--40\,Hz band-limiting, pink sensor noise at four SNR levels,
+        synthetic blink contamination at three rates, and a combined condition).
+  \item A \textbf{planned benchmark} of four analysis families: alpha
+        reactivity, affective decoding, motor decoding (exploratory) and reliability.
+  \item Two results that point in opposite directions. Alpha reactivity is
+        essentially unaffected by the acquisition chain once the reference is
+        site-matched (99.99\% retained), so the chain itself is not the limiting factor;
+        electrode choice and noise are. Affective
+        valence decoding is above chance from a full montage ($0.69$) but falls to
+        chance from a single electrode ($0.52$); arousal is reduced ($0.68$ to $0.56$)
+        rather than abolished.
+  \item An \textbf{open reporting checklist} for single-channel studies, derived from
+        COBIDAS MEEG \cite{pernet2020cobidas}, EEG-BIDS \cite{pernet2019bids} and, as a
+        general reporting model, the CRED-nf checklist \cite{ros2020crednf}, and released
+        with code and derived data.
+\end{enumerate}
+
+We emphasise what this paper is \emph{not}: it is not a clinical or wellness
+intervention study, it does not validate any commercial product, and it makes no claim
+that a particular headset is "good" or "bad". It provides a reference against which
+such claims can be evaluated.

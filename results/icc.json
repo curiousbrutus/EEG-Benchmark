@@ -1,0 +1,10 @@
+{
+  "n_subjects": 10,
+  "runs": [
+    4,
+    8,
+    12
+  ],
+  "icc_2_1": 0.9207928523086006,
+  "note": "within-session block reliability across runs 4/8/12; not test-retest"
+}

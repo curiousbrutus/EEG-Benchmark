@@ -1,0 +1,23 @@
+% 06-conclusion — v2.0
+We presented a reproducible degradation benchmark for single-channel and low-cost EEG
+and applied it to two open datasets. The results are conditional and, we think, useful.
+Alpha reactivity survived the acquisition chain almost intact once the reference was
+taken at the same electrode (99.99\% retained), whereas the electrode-site decision cost
+about 42\% of eyes-closed alpha power and sensor noise reduced the effect monotonically,
+to about 0.59 of the reference at 0\,dB. Affective valence was decodable from a full high-end
+montage ($0.69$) but fell to chance from a single electrode ($0.52$); arousal survived
+weakly ($0.56$ above chance but far below $0.68$), and four-class accuracy fell to $0.34$ (above chance but far below the montage). A
+low-cost 14-channel headset performed at a similar level to the high-end montage without
+passing a formal equivalence test. Decomposition showed that the acquisition chain was
+harmless, that valence was not distinguishable from chance at any single site and the
+four-class result stayed far below the montage, and that beta-band
+features carried part of the full-montage advantage --- a result that cautions against
+reading the montage number as purely cortical.
+
+The deliverable is a decision matrix, a single-channel reporting checklist, and an open,
+seeded analysis pipeline that turns public data into the reported numbers. The next
+version requires the full subject sample, a real single-channel device, a validated
+artifact model, registration of the analysis plan, and a larger equivalence study. The
+value of the exercise is that it replaces a plausible story ("single channels lose
+information") with a measured one: what a single electrode can and cannot show depends
+on the analysis, the site and the band, and that boundary can be mapped.

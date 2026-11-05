@@ -1,0 +1,67 @@
+% 02-related
+\subsection*{Consumer and low-cost EEG validation}
+Comparisons of medical-grade and consumer wireless systems report that consumer
+hardware can recover common event-related components under favourable conditions,
+while signal quality and artifact susceptibility differ substantially between devices
+and sessions \cite{ratti2017comparison,krigolson2017muse,sawangjai2020consumer}. One of
+the closest prior studies compared four systems (including MindWave and Muse) on five
+participants across two visits, focusing on Fp1 and explicitly comparing eyes-closed
+and eyes-open spectra and their test--retest reliability
+\cite{ratti2017comparison}. That is close to our alpha arm on real hardware, so the gap
+cannot be "nobody has looked at consumer spectral reliability"; the gap is that
+existing work does not quantify which analyses survive a \emph{controlled} degradation
+chain, and does not connect that chain to claim-level verdicts. Work on channel subsets for emotion decoding has shown that small, well-chosen
+montages can be competitive with large ones \cite{zheng2015channels}; what is missing is
+a controlled degradation of the same recordings with a site-matched reference and a
+claim-level decision rule. Our contribution is therefore the decomposition and the
+decision matrix, not the observation that fewer channels can hurt.
+
+\subsection*{Reproducibility and reporting standards}
+Psychology and neuroscience face a well-documented reproducibility problem
+\cite{osc2015reproducibility}. In electrophysiology the community response has been
+standardised reporting (COBIDAS MEEG) \cite{pernet2020cobidas} and standardised data
+organisation (EEG-BIDS) \cite{pernet2019bids}. Both are written primarily for
+research-grade acquisitions; they specify what to report, but not what can be
+inferred when the acquisition is a single channel. The present benchmark is designed
+to fill that inference gap and to make the reporting checklist operational for
+consumer-device studies.
+
+\subsection*{Analysis pipelines and artifact handling}
+Modern open pipelines make preprocessing explicit and reproducible
+\cite{gramfort2013mne,delorme2004eeglab,oostenveld2011fieldtrip}, and automated
+artifact rejection and independent-component classification reduce researcher degrees
+of freedom \cite{jas2017autoreject,piontonachini2019iclabel}. These tools assume
+enough channels for spatial decomposition; with one channel, ICA is unavailable and
+most artifact rejection reduces to amplitude thresholds or regression against
+auxiliary signals. A benchmark of single-channel conditions therefore must treat
+artifact handling as part of the independent variable, not as a preprocessing detail.
+
+\subsection*{Feature validity and open data}
+Band-power features are the workhorse of consumer-EEG claims, and their test--retest
+reliability is a prerequisite for any individual-level interpretation. Open datasets
+with repeated conditions and affective ratings allow reliability and decoding to be
+measured against a known ground truth rather than asserted
+\cite{schalk2009eegbci,koelstra2012deap}. We build directly on the EEGBCI resources and
+on an open affective dataset that contains both low-cost and high-end recordings
+\cite{sanchezreolid2022emotion,sanchezreolid2025dataset}; DEAP and DREAMER are discussed
+as alternatives that could not be used. We report every degradation step so that a
+reader can map our results onto their own acquisition.
+
+\subsection*{Positioning}
+Relative to device-comparison work, our contribution is analysis-centred and
+degradation-based. Relative to reporting standards, it is quantitative: rather than
+saying which variables to report, it estimates what each variable is worth under
+single-channel constraints. To our knowledge, no existing benchmark reports, for the
+same open datasets, how alpha reactivity, single-trial decoding, reliability and blink
+susceptibility change as a function of explicit consumer-hardware degradations.
+
+\subsection*{Benchmarking methodology}
+The idea of comparing analysis pipelines on shared datasets is established in BCI
+research: MOABB provides trustworthy benchmarking across datasets and pipelines
+\cite{jayaram2018moabb}. Our benchmark differs in object --- it holds the pipeline
+approximately fixed and varies the acquisition conditions, rather than comparing
+algorithms --- but it inherits the principle that a claim about a method should be
+evaluated against a common, open reference. Filter design is a concrete example of
+why this matters: apparently small high-pass choices can create artifactual effects
+and incorrect conclusions \cite{tanner2015filters}, which is exactly the kind of
+degradation our chain isolates and reports.

@@ -1,0 +1,169 @@
+{
+  "n_subjects": 12,
+  "recordings": [
+    {
+      "subject": 1,
+      "log": "Condicion2-1-2.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 25.500000000000004,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.8,
+        "valence": 0.75,
+        "arousal": 0.775
+      }
+    },
+    {
+      "subject": 4,
+      "log": "Condicion2-4-2.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 14.499999999999998,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.575,
+        "valence": 0.725,
+        "arousal": 0.7
+      }
+    },
+    {
+      "subject": 7,
+      "log": "condici\u00f3n1-7-1.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 43.0,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.7,
+        "valence": 0.925,
+        "arousal": 0.575
+      }
+    },
+    {
+      "subject": 8,
+      "log": "Condicion2-8-1.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 24.0,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.475,
+        "valence": 0.325,
+        "arousal": 0.65
+      }
+    },
+    {
+      "subject": 9,
+      "log": "Condicion2-9-1.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 36.00000000000001,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.475,
+        "valence": 0.725,
+        "arousal": 0.575
+      }
+    },
+    {
+      "subject": 11,
+      "log": "condici\u00f3n1-11-2.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 20.0,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.525,
+        "valence": 0.525,
+        "arousal": 0.725
+      }
+    },
+    {
+      "subject": 13,
+      "log": "Condicion2-13-2.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 15.5,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.55,
+        "valence": 0.7,
+        "arousal": 0.85
+      }
+    },
+    {
+      "subject": 15,
+      "log": "Condicion2-15-2.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 26.5,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.775,
+        "valence": 0.725,
+        "arousal": 0.85
+      }
+    },
+    {
+      "subject": 16,
+      "log": "Condicion2-16-1.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 23.5,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.2,
+        "valence": 0.5,
+        "arousal": 0.625
+      }
+    },
+    {
+      "subject": 17,
+      "log": "condici\u00f3n1-17-2.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 15.0,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.4,
+        "valence": 0.65,
+        "arousal": 0.575
+      }
+    },
+    {
+      "subject": 18,
+      "log": "Condicion2-18-2.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 26.0,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.65,
+        "valence": 0.65,
+        "arousal": 0.975
+      }
+    },
+    {
+      "subject": 20,
+      "log": "Condicion2-20-1.txt",
+      "n_trials": 40,
+      "alignment_median_ms": 44.0,
+      "n_neutral_ignored": 0,
+      "targets": {
+        "quadrant": 0.65,
+        "valence": 0.825,
+        "arousal": 0.65
+      }
+    }
+  ],
+  "summary": {
+    "quadrant": {
+      "n": 12,
+      "mean": 0.5645833333333334,
+      "ci_low": 0.4578225039249415,
+      "ci_high": 0.6713441627417254
+    },
+    "valence": {
+      "n": 12,
+      "mean": 0.6687500000000001,
+      "ci_low": 0.5682606956525036,
+      "ci_high": 0.7692393043474965
+    },
+    "arousal": {
+      "n": 12,
+      "mean": 0.7104166666666667,
+      "ci_low": 0.6284490704584,
+      "ci_high": 0.7923842628749334
+    }
+  }
+}

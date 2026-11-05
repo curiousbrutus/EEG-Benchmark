@@ -1,0 +1,497 @@
+{
+  "n_recordings": 18,
+  "recordings": [
+    {
+      "recording": "eegbci1-1.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.45
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.625
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.625
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.575
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.525
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.625
+        }
+      }
+    },
+    {
+      "recording": "eegbci10-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.525
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.225
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.45
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.475
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.55
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.525
+        }
+      }
+    },
+    {
+      "recording": "eegbci11-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.75
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.25
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.925
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.7
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.8
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.55
+        }
+      }
+    },
+    {
+      "recording": "eegbci12-1.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.75
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.575
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.7
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.55
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.9
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.8
+        }
+      }
+    },
+    {
+      "recording": "eegbci13-1.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.6
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.15
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.55
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.4
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.925
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.425
+        }
+      }
+    },
+    {
+      "recording": "eegbci14-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.525
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.45
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.6
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.625
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.775
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.4
+        }
+      }
+    },
+    {
+      "recording": "eegbci15-1.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 7,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.7
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.4
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.725
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.425
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.7
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.7
+        }
+      }
+    },
+    {
+      "recording": "eegbci16-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.75
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.325
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.725
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.275
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.675
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.7
+        }
+      }
+    },
+    {
+      "recording": "eegbci17-1.vhdr",
+      "n_quadrant_trials": 38,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.35
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.2
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.6416666666666666
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.4916666666666666
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.65
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.525
+        }
+      }
+    },
+    {
+      "recording": "eegbci18-1.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.85
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.375
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.85
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.55
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.825
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.4
+        }
+      }
+    },
+    {
+      "recording": "eegbci19-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.5
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.45
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.75
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.65
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.675
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.625
+        }
+      }
+    },
+    {
+      "recording": "eegbci2-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.25
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.1
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.45
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.475
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.55
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.475
+        }
+      }
+    },
+    {
+      "recording": "eegbci20-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.575
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.45
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.7
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.425
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.6
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.55
+        }
+      }
+    },
+    {
+      "recording": "eegbci3-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.675
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.45
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.675
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.625
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.825
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.625
+        }
+      }
+    },
+    {
+      "recording": "eegbci4-1.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.45
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.275
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.675
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.525
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.35
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.375
+        }
+      }
+    },
+    {
+      "recording": "eegbci7-2.vhdr",
+      "n_quadrant_trials": 39,
+      "n_neutral": 8,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.6
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.3
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.9
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.5416666666666666
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.7416666666666666
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.6583333333333333
+        }
+      }
+    },
+    {
+      "recording": "eegbci8-1.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 9,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.9
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.3
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.875
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.55
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.625
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.525
+        }
+      }
+    },
+    {
+      "recording": "eegbci9-2.vhdr",
+      "n_quadrant_trials": 40,
+      "n_neutral": 9,
+      "targets": {
+        "quadrant_full": {
+          "balanced_accuracy": 0.325
+        },
+        "quadrant_single": {
+          "balanced_accuracy": 0.275
+        },
+        "valence_full": {
+          "balanced_accuracy": 0.625
+        },
+        "valence_single": {
+          "balanced_accuracy": 0.475
+        },
+        "arousal_full": {
+          "balanced_accuracy": 0.5
+        },
+        "arousal_single": {
+          "balanced_accuracy": 0.625
+        }
+      }
+    }
+  ],
+  "summary": {
+    "quadrant_full": {
+      "n": 18,
+      "mean": 0.5847222222222223,
+      "ci_low": 0.49455264995768533,
+      "ci_high": 0.6748917944867592
+    },
+    "quadrant_single": {
+      "n": 18,
+      "mean": 0.34305555555555556,
+      "ci_low": 0.27314256043108653,
+      "ci_high": 0.4129685506800246
+    },
+    "valence_full": {
+      "n": 18,
+      "mean": 0.6912037037037037,
+      "ci_low": 0.6230285650358746,
+      "ci_high": 0.7593788423715327
+    },
+    "valence_single": {
+      "n": 18,
+      "mean": 0.5185185185185186,
+      "ci_low": 0.4677930017053783,
+      "ci_high": 0.5692440353316589
+    },
+    "arousal_full": {
+      "n": 18,
+      "mean": 0.6773148148148148,
+      "ci_low": 0.6022382313949923,
+      "ci_high": 0.7523913982346373
+    },
+    "arousal_single": {
+      "n": 18,
+      "mean": 0.5615740740740741,
+      "ci_low": 0.5027248776332987,
+      "ci_high": 0.6204232705148496
+    }
+  },
+  "chance": {
+    "quadrant": 0.25,
+    "binary": 0.5
+  }
+}

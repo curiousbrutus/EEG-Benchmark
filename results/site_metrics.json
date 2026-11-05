@@ -1,0 +1,33 @@
+{
+  "n": 109,
+  "chain_cost_log": {
+    "n": 109,
+    "mean": -0.0001291866508140432,
+    "ci_low": -0.000403511181381614,
+    "ci_high": 0.00014513787975352764
+  },
+  "chain_retention": {
+    "mean": 0.999870821693422,
+    "ci_low": 0.9995965702183062,
+    "ci_high": 1.0001451484127653
+  },
+  "blink_vs_clean_log": {
+    "n": 109,
+    "mean": -0.0020301808547189687,
+    "ci_low": -0.0030993735968300896,
+    "ci_high": -0.0009609881126078476
+  },
+  "fz_vs_posterior_log": {
+    "n": 109,
+    "mean": -0.7068164016182126,
+    "ci_low": -0.8160665346357034,
+    "ci_high": -0.5975662686007217
+  },
+  "fz_posterior_ratio": {
+    "n": 109,
+    "mean": 0.5755618421924052,
+    "ci_low": 0.5162664070155967,
+    "ci_high": 0.6348572773692138
+  },
+  "note": "chain_cost is the reactivity difference Fz-full vs Fz-degraded; negative means degradation lowers the effect. Blink contrast is blink30 minus clean chain."
+}

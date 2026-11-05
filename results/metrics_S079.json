@@ -1,0 +1,90 @@
+{
+  "subject": 79,
+  "seed": 20261103,
+  "alpha_reactivity": {
+    "ref": {
+      "eyes_open": 8.197976307821345e-11,
+      "eyes_closed": 2.0681541814906197e-10,
+      "log_ratio": 0.9253542706245943
+    },
+    "fz": {
+      "eyes_open": 4.661328120456696e-11,
+      "eyes_closed": 2.1890081586821875e-10,
+      "log_ratio": 1.5467332267339995
+    },
+    "fz_128": {
+      "eyes_open": 4.661645948339527e-11,
+      "eyes_closed": 2.188871732759106e-10,
+      "log_ratio": 1.5466027199727177
+    },
+    "fz_128_quant": {
+      "eyes_open": 4.6589870847627076e-11,
+      "eyes_closed": 2.1884320116060122e-10,
+      "log_ratio": 1.546972343227512
+    },
+    "fz_128_quant_band": {
+      "eyes_open": 4.647555757067302e-11,
+      "eyes_closed": 2.1810260396708734e-10,
+      "log_ratio": 1.5460390817098877
+    },
+    "fz_noise20": {
+      "eyes_open": 4.6969534708903714e-11,
+      "eyes_closed": 2.179053550311815e-10,
+      "log_ratio": 1.5345616234288293
+    },
+    "fz_noise10": {
+      "eyes_open": 4.809298744576101e-11,
+      "eyes_closed": 2.1854378741972496e-10,
+      "log_ratio": 1.5138500192137703
+    },
+    "fz_noise5": {
+      "eyes_open": 5.1416793491613696e-11,
+      "eyes_closed": 2.183870584132787e-10,
+      "log_ratio": 1.4463041450396095
+    },
+    "fz_noise0": {
+      "eyes_open": 6.470293259603081e-11,
+      "eyes_closed": 2.5048638147646335e-10,
+      "log_ratio": 1.3535980271447807
+    },
+    "fz_blink5": {
+      "eyes_open": 4.642548700047026e-11,
+      "eyes_closed": 2.181495007693824e-10,
+      "log_ratio": 1.5473320138613595
+    },
+    "fz_blink15": {
+      "eyes_open": 4.6503198421746545e-11,
+      "eyes_closed": 2.1767207930460257e-10,
+      "log_ratio": 1.5434686134447
+    },
+    "fz_blink30": {
+      "eyes_open": 4.6501051667433535e-11,
+      "eyes_closed": 2.1857878810052993e-10,
+      "log_ratio": 1.5476716069709786
+    },
+    "fz_combined": {
+      "eyes_open": 6.522477789697101e-11,
+      "eyes_closed": 2.4338028290406905e-10,
+      "log_ratio": 1.316785744470027
+    }
+  },
+  "motor_decoding_fz": {
+    "status": "no_epochs",
+    "accuracy": null
+  },
+  "motor_decoding_full": {
+    "status": "no_epochs",
+    "accuracy": null
+  },
+  "reliability": {
+    "status": "ok",
+    "r": 0.03621506546745352,
+    "spearman_brown": 0.06989874336775119,
+    "n_windows": 30
+  },
+  "deap": {
+    "status": "not_available",
+    "reason": "DEAP requires accepting the data-use agreement; place files under data/raw/deap/",
+    "script": "scripts/06_deap.py"
+  }
+}

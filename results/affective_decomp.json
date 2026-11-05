@@ -1,0 +1,949 @@
+{
+  "n_recordings": 18,
+  "recordings": [
+    {
+      "recording": "eegbci1-1.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.625,
+          "full_theta_alpha": 0.525,
+          "full_beta": 0.55,
+          "hz128": 0.625,
+          "quant": 0.625,
+          "band": 0.625,
+          "single_Fz": 0.575,
+          "single_Cz": 0.6,
+          "single_Pz": 0.525,
+          "single_Oz": 0.55
+        },
+        "arousal": {
+          "full": 0.525,
+          "full_theta_alpha": 0.525,
+          "full_beta": 0.625,
+          "hz128": 0.55,
+          "quant": 0.55,
+          "band": 0.55,
+          "single_Fz": 0.625,
+          "single_Cz": 0.525,
+          "single_Pz": 0.525,
+          "single_Oz": 0.55
+        },
+        "quadrant": {
+          "full": 0.45,
+          "full_theta_alpha": 0.55,
+          "full_beta": 0.525,
+          "hz128": 0.45,
+          "quant": 0.45,
+          "band": 0.45,
+          "single_Fz": 0.625,
+          "single_Cz": 0.575,
+          "single_Pz": 0.55,
+          "single_Oz": 0.5
+        }
+      }
+    },
+    {
+      "recording": "eegbci10-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.45,
+          "full_theta_alpha": 0.375,
+          "full_beta": 0.55,
+          "hz128": 0.45,
+          "quant": 0.45,
+          "band": 0.45,
+          "single_Fz": 0.475,
+          "single_Cz": 0.45,
+          "single_Pz": 0.325,
+          "single_Oz": 0.4
+        },
+        "arousal": {
+          "full": 0.55,
+          "full_theta_alpha": 0.55,
+          "full_beta": 0.675,
+          "hz128": 0.55,
+          "quant": 0.55,
+          "band": 0.55,
+          "single_Fz": 0.525,
+          "single_Cz": 0.525,
+          "single_Pz": 0.425,
+          "single_Oz": 0.45
+        },
+        "quadrant": {
+          "full": 0.525,
+          "full_theta_alpha": 0.275,
+          "full_beta": 0.6,
+          "hz128": 0.525,
+          "quant": 0.525,
+          "band": 0.525,
+          "single_Fz": 0.225,
+          "single_Cz": 0.35,
+          "single_Pz": 0.3,
+          "single_Oz": 0.325
+        }
+      }
+    },
+    {
+      "recording": "eegbci11-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.925,
+          "full_theta_alpha": 0.675,
+          "full_beta": 0.925,
+          "hz128": 0.925,
+          "quant": 0.925,
+          "band": 0.9,
+          "single_Fz": 0.7,
+          "single_Cz": 0.55,
+          "single_Pz": 0.65,
+          "single_Oz": 0.675
+        },
+        "arousal": {
+          "full": 0.8,
+          "full_theta_alpha": 0.625,
+          "full_beta": 0.85,
+          "hz128": 0.8,
+          "quant": 0.825,
+          "band": 0.825,
+          "single_Fz": 0.55,
+          "single_Cz": 0.625,
+          "single_Pz": 0.5,
+          "single_Oz": 0.6
+        },
+        "quadrant": {
+          "full": 0.75,
+          "full_theta_alpha": 0.45,
+          "full_beta": 0.825,
+          "hz128": 0.75,
+          "quant": 0.75,
+          "band": 0.75,
+          "single_Fz": 0.25,
+          "single_Cz": 0.375,
+          "single_Pz": 0.375,
+          "single_Oz": 0.425
+        }
+      }
+    },
+    {
+      "recording": "eegbci12-1.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.7,
+          "full_theta_alpha": 0.7,
+          "full_beta": 0.625,
+          "hz128": 0.7,
+          "quant": 0.725,
+          "band": 0.725,
+          "single_Fz": 0.55,
+          "single_Cz": 0.575,
+          "single_Pz": 0.525,
+          "single_Oz": 0.575
+        },
+        "arousal": {
+          "full": 0.9,
+          "full_theta_alpha": 0.7,
+          "full_beta": 0.775,
+          "hz128": 0.9,
+          "quant": 0.9,
+          "band": 0.9,
+          "single_Fz": 0.8,
+          "single_Cz": 0.825,
+          "single_Pz": 0.825,
+          "single_Oz": 0.85
+        },
+        "quadrant": {
+          "full": 0.75,
+          "full_theta_alpha": 0.45,
+          "full_beta": 0.625,
+          "hz128": 0.75,
+          "quant": 0.75,
+          "band": 0.75,
+          "single_Fz": 0.575,
+          "single_Cz": 0.7,
+          "single_Pz": 0.475,
+          "single_Oz": 0.625
+        }
+      }
+    },
+    {
+      "recording": "eegbci13-1.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.55,
+          "full_theta_alpha": 0.525,
+          "full_beta": 0.625,
+          "hz128": 0.55,
+          "quant": 0.55,
+          "band": 0.55,
+          "single_Fz": 0.4,
+          "single_Cz": 0.4,
+          "single_Pz": 0.45,
+          "single_Oz": 0.575
+        },
+        "arousal": {
+          "full": 0.925,
+          "full_theta_alpha": 0.65,
+          "full_beta": 0.95,
+          "hz128": 0.925,
+          "quant": 0.925,
+          "band": 0.925,
+          "single_Fz": 0.425,
+          "single_Cz": 0.425,
+          "single_Pz": 0.45,
+          "single_Oz": 0.25
+        },
+        "quadrant": {
+          "full": 0.6,
+          "full_theta_alpha": 0.425,
+          "full_beta": 0.75,
+          "hz128": 0.6,
+          "quant": 0.575,
+          "band": 0.575,
+          "single_Fz": 0.15,
+          "single_Cz": 0.175,
+          "single_Pz": 0.3,
+          "single_Oz": 0.275
+        }
+      }
+    },
+    {
+      "recording": "eegbci14-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.6,
+          "full_theta_alpha": 0.525,
+          "full_beta": 0.7,
+          "hz128": 0.6,
+          "quant": 0.6,
+          "band": 0.6,
+          "single_Fz": 0.625,
+          "single_Cz": 0.425,
+          "single_Pz": 0.475,
+          "single_Oz": 0.5
+        },
+        "arousal": {
+          "full": 0.775,
+          "full_theta_alpha": 0.5,
+          "full_beta": 0.775,
+          "hz128": 0.775,
+          "quant": 0.775,
+          "band": 0.775,
+          "single_Fz": 0.4,
+          "single_Cz": 0.475,
+          "single_Pz": 0.65,
+          "single_Oz": 0.625
+        },
+        "quadrant": {
+          "full": 0.525,
+          "full_theta_alpha": 0.4,
+          "full_beta": 0.55,
+          "hz128": 0.525,
+          "quant": 0.5,
+          "band": 0.5,
+          "single_Fz": 0.45,
+          "single_Cz": 0.275,
+          "single_Pz": 0.3,
+          "single_Oz": 0.4
+        }
+      }
+    },
+    {
+      "recording": "eegbci15-1.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.725,
+          "full_theta_alpha": 0.65,
+          "full_beta": 0.65,
+          "hz128": 0.725,
+          "quant": 0.725,
+          "band": 0.725,
+          "single_Fz": 0.425,
+          "single_Cz": 0.5,
+          "single_Pz": 0.5,
+          "single_Oz": 0.45
+        },
+        "arousal": {
+          "full": 0.7,
+          "full_theta_alpha": 0.65,
+          "full_beta": 0.725,
+          "hz128": 0.725,
+          "quant": 0.675,
+          "band": 0.675,
+          "single_Fz": 0.7,
+          "single_Cz": 0.725,
+          "single_Pz": 0.625,
+          "single_Oz": 0.675
+        },
+        "quadrant": {
+          "full": 0.7,
+          "full_theta_alpha": 0.525,
+          "full_beta": 0.7,
+          "hz128": 0.7,
+          "quant": 0.725,
+          "band": 0.725,
+          "single_Fz": 0.4,
+          "single_Cz": 0.525,
+          "single_Pz": 0.325,
+          "single_Oz": 0.3
+        }
+      }
+    },
+    {
+      "recording": "eegbci16-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.725,
+          "full_theta_alpha": 0.65,
+          "full_beta": 0.875,
+          "hz128": 0.725,
+          "quant": 0.725,
+          "band": 0.725,
+          "single_Fz": 0.275,
+          "single_Cz": 0.375,
+          "single_Pz": 0.6,
+          "single_Oz": 0.575
+        },
+        "arousal": {
+          "full": 0.675,
+          "full_theta_alpha": 0.75,
+          "full_beta": 0.725,
+          "hz128": 0.675,
+          "quant": 0.675,
+          "band": 0.675,
+          "single_Fz": 0.7,
+          "single_Cz": 0.65,
+          "single_Pz": 0.325,
+          "single_Oz": 0.55
+        },
+        "quadrant": {
+          "full": 0.75,
+          "full_theta_alpha": 0.5,
+          "full_beta": 0.875,
+          "hz128": 0.75,
+          "quant": 0.75,
+          "band": 0.75,
+          "single_Fz": 0.325,
+          "single_Cz": 0.4,
+          "single_Pz": 0.2,
+          "single_Oz": 0.2
+        }
+      }
+    },
+    {
+      "recording": "eegbci17-1.vhdr",
+      "n_trials": 38,
+      "targets": {
+        "valence": {
+          "full": 0.6416666666666666,
+          "full_theta_alpha": 0.4583333333333333,
+          "full_beta": 0.6333333333333333,
+          "hz128": 0.6416666666666666,
+          "quant": 0.6166666666666666,
+          "band": 0.6166666666666666,
+          "single_Fz": 0.4916666666666666,
+          "single_Cz": 0.3083333333333333,
+          "single_Pz": 0.475,
+          "single_Oz": 0.5833333333333333
+        },
+        "arousal": {
+          "full": 0.65,
+          "full_theta_alpha": 0.7333333333333333,
+          "full_beta": 0.5166666666666666,
+          "hz128": 0.65,
+          "quant": 0.65,
+          "band": 0.65,
+          "single_Fz": 0.525,
+          "single_Cz": 0.39166666666666666,
+          "single_Pz": 0.525,
+          "single_Oz": 0.575
+        },
+        "quadrant": {
+          "full": 0.35,
+          "full_theta_alpha": 0.35,
+          "full_beta": 0.475,
+          "hz128": 0.35,
+          "quant": 0.35,
+          "band": 0.35,
+          "single_Fz": 0.2,
+          "single_Cz": 0.2,
+          "single_Pz": 0.275,
+          "single_Oz": 0.25
+        }
+      }
+    },
+    {
+      "recording": "eegbci18-1.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.85,
+          "full_theta_alpha": 0.75,
+          "full_beta": 0.925,
+          "hz128": 0.85,
+          "quant": 0.875,
+          "band": 0.875,
+          "single_Fz": 0.55,
+          "single_Cz": 0.55,
+          "single_Pz": 0.6,
+          "single_Oz": 0.675
+        },
+        "arousal": {
+          "full": 0.825,
+          "full_theta_alpha": 0.675,
+          "full_beta": 0.85,
+          "hz128": 0.825,
+          "quant": 0.825,
+          "band": 0.825,
+          "single_Fz": 0.4,
+          "single_Cz": 0.425,
+          "single_Pz": 0.475,
+          "single_Oz": 0.525
+        },
+        "quadrant": {
+          "full": 0.85,
+          "full_theta_alpha": 0.7,
+          "full_beta": 0.8,
+          "hz128": 0.85,
+          "quant": 0.85,
+          "band": 0.85,
+          "single_Fz": 0.375,
+          "single_Cz": 0.3,
+          "single_Pz": 0.3,
+          "single_Oz": 0.4
+        }
+      }
+    },
+    {
+      "recording": "eegbci19-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.75,
+          "full_theta_alpha": 0.575,
+          "full_beta": 0.75,
+          "hz128": 0.75,
+          "quant": 0.775,
+          "band": 0.775,
+          "single_Fz": 0.65,
+          "single_Cz": 0.6,
+          "single_Pz": 0.55,
+          "single_Oz": 0.6
+        },
+        "arousal": {
+          "full": 0.675,
+          "full_theta_alpha": 0.55,
+          "full_beta": 0.775,
+          "hz128": 0.675,
+          "quant": 0.675,
+          "band": 0.675,
+          "single_Fz": 0.625,
+          "single_Cz": 0.7,
+          "single_Pz": 0.525,
+          "single_Oz": 0.575
+        },
+        "quadrant": {
+          "full": 0.5,
+          "full_theta_alpha": 0.325,
+          "full_beta": 0.725,
+          "hz128": 0.5,
+          "quant": 0.525,
+          "band": 0.525,
+          "single_Fz": 0.45,
+          "single_Cz": 0.475,
+          "single_Pz": 0.275,
+          "single_Oz": 0.325
+        }
+      }
+    },
+    {
+      "recording": "eegbci2-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.45,
+          "full_theta_alpha": 0.425,
+          "full_beta": 0.45,
+          "hz128": 0.45,
+          "quant": 0.6,
+          "band": 0.6,
+          "single_Fz": 0.475,
+          "single_Cz": 0.625,
+          "single_Pz": 0.525,
+          "single_Oz": 0.4
+        },
+        "arousal": {
+          "full": 0.55,
+          "full_theta_alpha": 0.65,
+          "full_beta": 0.4,
+          "hz128": 0.55,
+          "quant": 0.5,
+          "band": 0.5,
+          "single_Fz": 0.475,
+          "single_Cz": 0.55,
+          "single_Pz": 0.625,
+          "single_Oz": 0.3
+        },
+        "quadrant": {
+          "full": 0.25,
+          "full_theta_alpha": 0.35,
+          "full_beta": 0.2,
+          "hz128": 0.25,
+          "quant": 0.2,
+          "band": 0.2,
+          "single_Fz": 0.1,
+          "single_Cz": 0.25,
+          "single_Pz": 0.225,
+          "single_Oz": 0.1
+        }
+      }
+    },
+    {
+      "recording": "eegbci20-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.7,
+          "full_theta_alpha": 0.525,
+          "full_beta": 0.725,
+          "hz128": 0.7,
+          "quant": 0.65,
+          "band": 0.65,
+          "single_Fz": 0.425,
+          "single_Cz": 0.4,
+          "single_Pz": 0.5,
+          "single_Oz": 0.475
+        },
+        "arousal": {
+          "full": 0.6,
+          "full_theta_alpha": 0.7,
+          "full_beta": 0.6,
+          "hz128": 0.6,
+          "quant": 0.625,
+          "band": 0.625,
+          "single_Fz": 0.55,
+          "single_Cz": 0.625,
+          "single_Pz": 0.6,
+          "single_Oz": 0.7
+        },
+        "quadrant": {
+          "full": 0.575,
+          "full_theta_alpha": 0.45,
+          "full_beta": 0.475,
+          "hz128": 0.575,
+          "quant": 0.6,
+          "band": 0.6,
+          "single_Fz": 0.45,
+          "single_Cz": 0.4,
+          "single_Pz": 0.45,
+          "single_Oz": 0.3
+        }
+      }
+    },
+    {
+      "recording": "eegbci3-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.675,
+          "full_theta_alpha": 0.575,
+          "full_beta": 0.875,
+          "hz128": 0.675,
+          "quant": 0.7,
+          "band": 0.7,
+          "single_Fz": 0.625,
+          "single_Cz": 0.625,
+          "single_Pz": 0.6,
+          "single_Oz": 0.525
+        },
+        "arousal": {
+          "full": 0.825,
+          "full_theta_alpha": 0.725,
+          "full_beta": 0.725,
+          "hz128": 0.8,
+          "quant": 0.825,
+          "band": 0.825,
+          "single_Fz": 0.625,
+          "single_Cz": 0.65,
+          "single_Pz": 0.675,
+          "single_Oz": 0.7
+        },
+        "quadrant": {
+          "full": 0.675,
+          "full_theta_alpha": 0.475,
+          "full_beta": 0.675,
+          "hz128": 0.675,
+          "quant": 0.675,
+          "band": 0.675,
+          "single_Fz": 0.45,
+          "single_Cz": 0.5,
+          "single_Pz": 0.4,
+          "single_Oz": 0.525
+        }
+      }
+    },
+    {
+      "recording": "eegbci4-1.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.675,
+          "full_theta_alpha": 0.75,
+          "full_beta": 0.5,
+          "hz128": 0.675,
+          "quant": 0.675,
+          "band": 0.675,
+          "single_Fz": 0.525,
+          "single_Cz": 0.575,
+          "single_Pz": 0.55,
+          "single_Oz": 0.5
+        },
+        "arousal": {
+          "full": 0.35,
+          "full_theta_alpha": 0.45,
+          "full_beta": 0.575,
+          "hz128": 0.35,
+          "quant": 0.35,
+          "band": 0.35,
+          "single_Fz": 0.375,
+          "single_Cz": 0.375,
+          "single_Pz": 0.575,
+          "single_Oz": 0.575
+        },
+        "quadrant": {
+          "full": 0.45,
+          "full_theta_alpha": 0.35,
+          "full_beta": 0.45,
+          "hz128": 0.45,
+          "quant": 0.4,
+          "band": 0.4,
+          "single_Fz": 0.275,
+          "single_Cz": 0.275,
+          "single_Pz": 0.25,
+          "single_Oz": 0.25
+        }
+      }
+    },
+    {
+      "recording": "eegbci7-2.vhdr",
+      "n_trials": 39,
+      "targets": {
+        "valence": {
+          "full": 0.9,
+          "full_theta_alpha": 0.6,
+          "full_beta": 0.975,
+          "hz128": 0.9,
+          "quant": 0.9,
+          "band": 0.9,
+          "single_Fz": 0.5416666666666666,
+          "single_Cz": 0.575,
+          "single_Pz": 0.31666666666666665,
+          "single_Oz": 0.6166666666666666
+        },
+        "arousal": {
+          "full": 0.7416666666666666,
+          "full_theta_alpha": 0.6916666666666667,
+          "full_beta": 0.8,
+          "hz128": 0.7416666666666666,
+          "quant": 0.7416666666666666,
+          "band": 0.7416666666666666,
+          "single_Fz": 0.6583333333333333,
+          "single_Cz": 0.6333333333333333,
+          "single_Pz": 0.6083333333333333,
+          "single_Oz": 0.6083333333333333
+        },
+        "quadrant": {
+          "full": 0.6,
+          "full_theta_alpha": 0.35,
+          "full_beta": 0.675,
+          "hz128": 0.6,
+          "quant": 0.6,
+          "band": 0.625,
+          "single_Fz": 0.3,
+          "single_Cz": 0.35,
+          "single_Pz": 0.175,
+          "single_Oz": 0.425
+        }
+      }
+    },
+    {
+      "recording": "eegbci8-1.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.875,
+          "full_theta_alpha": 0.875,
+          "full_beta": 0.85,
+          "hz128": 0.875,
+          "quant": 0.875,
+          "band": 0.875,
+          "single_Fz": 0.55,
+          "single_Cz": 0.675,
+          "single_Pz": 0.7,
+          "single_Oz": 0.525
+        },
+        "arousal": {
+          "full": 0.625,
+          "full_theta_alpha": 0.675,
+          "full_beta": 0.525,
+          "hz128": 0.625,
+          "quant": 0.625,
+          "band": 0.625,
+          "single_Fz": 0.525,
+          "single_Cz": 0.35,
+          "single_Pz": 0.45,
+          "single_Oz": 0.55
+        },
+        "quadrant": {
+          "full": 0.9,
+          "full_theta_alpha": 0.875,
+          "full_beta": 0.825,
+          "hz128": 0.9,
+          "quant": 0.9,
+          "band": 0.9,
+          "single_Fz": 0.3,
+          "single_Cz": 0.45,
+          "single_Pz": 0.275,
+          "single_Oz": 0.475
+        }
+      }
+    },
+    {
+      "recording": "eegbci9-2.vhdr",
+      "n_trials": 40,
+      "targets": {
+        "valence": {
+          "full": 0.625,
+          "full_theta_alpha": 0.6,
+          "full_beta": 0.4,
+          "hz128": 0.625,
+          "quant": 0.625,
+          "band": 0.625,
+          "single_Fz": 0.475,
+          "single_Cz": 0.45,
+          "single_Pz": 0.525,
+          "single_Oz": 0.375
+        },
+        "arousal": {
+          "full": 0.5,
+          "full_theta_alpha": 0.55,
+          "full_beta": 0.65,
+          "hz128": 0.5,
+          "quant": 0.5,
+          "band": 0.5,
+          "single_Fz": 0.625,
+          "single_Cz": 0.575,
+          "single_Pz": 0.775,
+          "single_Oz": 0.6
+        },
+        "quadrant": {
+          "full": 0.325,
+          "full_theta_alpha": 0.4,
+          "full_beta": 0.425,
+          "hz128": 0.325,
+          "quant": 0.325,
+          "band": 0.325,
+          "single_Fz": 0.275,
+          "single_Cz": 0.3,
+          "single_Pz": 0.45,
+          "single_Oz": 0.25
+        }
+      }
+    }
+  ],
+  "summary": {
+    "valence": {
+      "full": {
+        "n": 18,
+        "mean": 0.6912037037037037,
+        "ci_low": 0.6230285650358746,
+        "ci_high": 0.7593788423715327
+      },
+      "full_theta_alpha": {
+        "n": 18,
+        "mean": 0.5976851851851852,
+        "ci_low": 0.5354542162656736,
+        "ci_high": 0.6599161541046968
+      },
+      "full_beta": {
+        "n": 18,
+        "mean": 0.699074074074074,
+        "ci_low": 0.6121486370171643,
+        "ci_high": 0.7859995111309837
+      },
+      "hz128": {
+        "n": 18,
+        "mean": 0.6912037037037037,
+        "ci_low": 0.6230285650358746,
+        "ci_high": 0.7593788423715327
+      },
+      "quant": {
+        "n": 18,
+        "mean": 0.700925925925926,
+        "ci_low": 0.6364610799656849,
+        "ci_high": 0.765390771886167
+      },
+      "band": {
+        "n": 18,
+        "mean": 0.6995370370370371,
+        "ci_low": 0.6362810100776326,
+        "ci_high": 0.7627930639964415
+      },
+      "single_Fz": {
+        "n": 18,
+        "mean": 0.5185185185185186,
+        "ci_low": 0.4677930017053783,
+        "ci_high": 0.5692440353316589
+      },
+      "single_Cz": {
+        "n": 18,
+        "mean": 0.5143518518518518,
+        "ci_low": 0.4627526243011902,
+        "ci_high": 0.5659510794025135
+      },
+      "single_Pz": {
+        "n": 18,
+        "mean": 0.5217592592592593,
+        "ci_low": 0.47359612438633114,
+        "ci_high": 0.5699223941321874
+      },
+      "single_Oz": {
+        "n": 18,
+        "mean": 0.5319444444444446,
+        "ci_low": 0.4879899532395866,
+        "ci_high": 0.5758989356493025
+      }
+    },
+    "arousal": {
+      "full": {
+        "n": 18,
+        "mean": 0.6773148148148148,
+        "ci_low": 0.6022382313949923,
+        "ci_high": 0.7523913982346373
+      },
+      "full_theta_alpha": {
+        "n": 18,
+        "mean": 0.6305555555555556,
+        "ci_low": 0.5866528059709931,
+        "ci_high": 0.6744583051401182
+      },
+      "full_beta": {
+        "n": 18,
+        "mean": 0.6953703703703704,
+        "ci_low": 0.6266675432747177,
+        "ci_high": 0.7640731974660231
+      },
+      "hz128": {
+        "n": 18,
+        "mean": 0.6787037037037037,
+        "ci_low": 0.6048013266435102,
+        "ci_high": 0.7526060807638972
+      },
+      "quant": {
+        "n": 18,
+        "mean": 0.6773148148148148,
+        "ci_low": 0.6011561323567651,
+        "ci_high": 0.7534734972728645
+      },
+      "band": {
+        "n": 18,
+        "mean": 0.6773148148148148,
+        "ci_low": 0.6011561323567651,
+        "ci_high": 0.7534734972728645
+      },
+      "single_Fz": {
+        "n": 18,
+        "mean": 0.5615740740740741,
+        "ci_low": 0.5027248776332987,
+        "ci_high": 0.6204232705148496
+      },
+      "single_Cz": {
+        "n": 18,
+        "mean": 0.5583333333333332,
+        "ci_low": 0.492257155003092,
+        "ci_high": 0.6244095116635745
+      },
+      "single_Pz": {
+        "n": 18,
+        "mean": 0.5643518518518519,
+        "ci_low": 0.5025934337852985,
+        "ci_high": 0.6261102699184052
+      },
+      "single_Oz": {
+        "n": 18,
+        "mean": 0.5699074074074075,
+        "ci_low": 0.5014119722709421,
+        "ci_high": 0.6384028425438729
+      }
+    },
+    "quadrant": {
+      "full": {
+        "n": 18,
+        "mean": 0.5847222222222223,
+        "ci_low": 0.49455264995768533,
+        "ci_high": 0.6748917944867592
+      },
+      "full_theta_alpha": {
+        "n": 18,
+        "mean": 0.4555555555555556,
+        "ci_low": 0.3838767576659713,
+        "ci_high": 0.5272343534451399
+      },
+      "full_beta": {
+        "n": 18,
+        "mean": 0.6208333333333333,
+        "ci_low": 0.5337295617013031,
+        "ci_high": 0.7079371049653636
+      },
+      "hz128": {
+        "n": 18,
+        "mean": 0.5847222222222223,
+        "ci_low": 0.49455264995768533,
+        "ci_high": 0.6748917944867592
+      },
+      "quant": {
+        "n": 18,
+        "mean": 0.5805555555555554,
+        "ci_low": 0.48582135156833123,
+        "ci_high": 0.6752897595427796
+      },
+      "band": {
+        "n": 18,
+        "mean": 0.5819444444444444,
+        "ci_low": 0.4870903523605568,
+        "ci_high": 0.676798536528332
+      },
+      "single_Fz": {
+        "n": 18,
+        "mean": 0.34305555555555556,
+        "ci_low": 0.27314256043108653,
+        "ci_high": 0.4129685506800246
+      },
+      "single_Cz": {
+        "n": 18,
+        "mean": 0.3819444444444444,
+        "ci_low": 0.31387640619109786,
+        "ci_high": 0.450012482697791
+      },
+      "single_Pz": {
+        "n": 18,
+        "mean": 0.32777777777777783,
+        "ci_low": 0.27716302033696844,
+        "ci_high": 0.37839253521858723
+      },
+      "single_Oz": {
+        "n": 18,
+        "mean": 0.35277777777777775,
+        "ci_low": 0.2881234235211284,
+        "ci_high": 0.4174321320344271
+      }
+    }
+  }
+}

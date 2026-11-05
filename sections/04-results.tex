@@ -1,0 +1,201 @@
+% 04-results — v1.0
+% Sayilar results/summary.json (N=109), paired.json, alpha_site_sensitivity.json (N=109),
+% icc.json (N=10), csp.json (N=10), affective.json (N=18) dosyalarindan alindi.
+
+\subsection*{Channel reduction, bandwidth and quantisation do not degrade alpha reactivity}
+At the full montage the eyes-closed/eyes-open alpha log ratio was $1.00$
+(95\% CI $[0.78, 1.04]$; $N=109$). The Fz single-channel chain --- single electrode,
+128\,Hz, 1\,\textmu V quantisation, 1--40\,Hz band-limiting --- gave $0.77$
+($[0.65, 0.89]$). Comparing the single channel with the scalp average, the paired
+difference was $-0.14$ ($[-0.19, -0.09]$). The mean per-subject retention ratio was
+$0.90$ ($[0.85, 0.96]$) and the geometric estimator (ratio of means) was $0.87$; the
+two estimators differ because ratios are skewed and both are reported in
+\texttt{results/paired.json} and \texttt{inference.json}.
+
+That comparison is confounded by electrode site. Two corrections are needed. First, the
+acquisition chain itself costs almost nothing to \emph{reactivity}: keeping the same
+electrode (Fz in the full recording versus Fz after the chain), the paired difference was
+$-0.0001$ ($[-0.0004, 0.0001]$), i.e.\ \textbf{99.99\%} of the reactivity effect was
+retained. Second, the electrode-site decision is not free: eyes-closed alpha power at Fz
+is only about \textbf{58\%} of the posterior-channel average (ratio $0.58$,
+$[0.52, 0.63]$). A single-channel device therefore pays for its site choice, not for its
+sampling or bandwidth. This also explains why 128\,Hz sampling, 1\,\textmu V
+quantisation and a 40\,Hz low-pass changed the estimate by less than $0.01$: for
+8--12\,Hz Welch power these operations are close to null, consistent with earlier
+filter work \cite{tanner2015filters}.
+
+Table~\ref{tab:alpha} reports the condition means and Figure~\ref{fig:pipeline}
+shows the degradation grid, while Figure~\ref{fig:retention} shows retention.
+
+\input{tables/alpha.tex}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/fig1_pipeline.pdf}
+  \caption{Degradation tree. The reference is the full-montage recording; the
+  single-channel chain is cumulative, while the noise and blink arms branch from the
+  fully degraded chain and are analysed separately.}
+  \label{fig:pipeline}
+\end{figure}
+
+\subsection*{Noise is the constraint that matters; blinks alone do not shift alpha reactivity}
+Noise produced a monotonic dose-response: $0.76$ at 20\,dB, $0.71$ at 10\,dB, $0.60$
+at 5\,dB and $0.38$ at 0\,dB, corresponding to geometric retention of $0.86$, $0.82$,
+$0.73$ and $0.59$ of the full-montage reference. The incremental paired contrasts
+against the clean chain (which isolate the noise manipulation) were $-0.008$
+($[-0.011, -0.006]$) at 20\,dB, $-0.064$ ($[-0.075, -0.052]$) at 10\,dB, $-0.169$
+($[-0.197, -0.140]$) at 5\,dB and $-0.384$ ($[-0.441, -0.328]$) at 0\,dB; all survive
+Benjamini--Hochberg correction across the condition family ($q<0.001$). The three blink arms were almost identical to
+the clean chain ($0.77$ at 5 and 15/min, $0.77$ at 30/min). The incremental contrast (30 blinks/min minus
+clean chain) was $-0.002$ ($[-0.003, -0.001]$; $q=0.0005$), a change of about 0.2\% that
+is statistically detectable but negligible in size; the combined arm ($0.34$) was driven
+by the 0\,dB noise it contains. The injected template has almost no energy in 8--12\,Hz
+and the same rate was added to both conditions, so this null is close to guaranteed by
+construction and should be read as a model check, not as evidence about real blinks.
+The template has almost no 8--12\,Hz energy and the same rate is added to both
+conditions, so the null is close to guaranteed and is not evidence about real ocular
+contamination \cite{gratton1983ocular,croft2000ocular,whitham2007emg}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures/fig2_retention.pdf}
+  \caption{Alpha reactivity retained relative to the scalp-average reference, by
+  condition ($N=109$; geometric retention relative to the full-montage reference and 95\% CI). The dashed line is the
+  planned 50\% decision threshold. Noise reduces retention monotonically; blinks
+  alone do not.}
+  \label{fig:retention}
+\end{figure}
+
+\subsection*{Affective decoding survives a full montage but not one electrode}
+Table~\ref{tab:affective} reports the affective arm on the high-end BrainVision
+recordings (18 recordings from 20 participants; about 10 trials per quadrant). From the
+full montage, valence was decoded at $0.69$ ($[0.62, 0.76]$), arousal at $0.68$
+($[0.60, 0.75]$) and the four quadrants at $0.58$ ($[0.49, 0.67]$); the binary
+intervals exclude chance and the four-class interval is above it. From the same data
+reduced to the single-channel chain, valence fell to $0.52$ ($[0.47, 0.57]$) --- chance
+--- arousal to $0.56$ ($[0.50, 0.62]$), which remains above chance but far below the
+montage, and the four quadrants to $0.34$ ($[0.27, 0.41]$). The paired full-minus-single
+differences were $+0.17$ ($[0.10, 0.24]$) for valence, $+0.12$ ($[0.03, 0.20]$) for
+arousal and $+0.24$ ($[0.14, 0.34]$) for the four quadrants, so the collapse is not
+just a loss of significance.
+
+A low-cost 14-channel Emotiv headset decoded the same targets at $0.67$
+($[0.57, 0.77]$) for valence, $0.71$ ($[0.63, 0.79]$) for arousal and $0.56$
+($[0.46, 0.67]$) for the four quadrants. On the 12 participants present in both
+datasets, the low-cost minus high-end difference was $-0.07$ ($[-0.21, 0.08]$) for
+valence, $+0.05$ ($[-0.05, 0.15]$) for arousal and $-0.04$ ($[-0.21, 0.12]$) for the
+four quadrants. These differences are not statistically distinguishable from zero, but
+a $\pm 10$-point equivalence test does not pass either (TOST $p=0.31$, $0.14$ and
+$0.23$), so the honest statement is that the low-cost device performs at a similar
+level in this sample, not that equivalence has been established.
+
+\input{tables/affective.tex}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/fig3_affective.pdf}
+  \caption{Affective decoding by acquisition representation: high-end montage,
+  low-cost 14-channel Emotiv and single-channel chain. Dashed and dotted lines mark
+  chance for binary (0.50) and four-class (0.25) targets.}
+  \label{fig:affective}
+\end{figure}
+
+\subsection*{Decomposing the affective collapse: representation, site and band}
+The chain that is harmless for alpha is also harmless for affective decoding
+(Table~\ref{tab:decomp}): resampling to 128\,Hz, quantisation and band-limiting left
+four-class accuracy at $0.58$--$0.59$ and valence at $0.69$--$0.70$. The loss appears
+when the representation becomes one electrode. Valence was not distinguishable from
+chance at any of the four sites ($0.51$--$0.53$ at Fz, Cz, Pz and Oz); four-class
+accuracy was $0.33$--$0.38$, above the $0.25$ chance level but far below the montage;
+and arousal stayed weakly above chance at Fz, Pz and Oz ($0.56$--$0.57$) but not at Cz
+($0.56$, $[0.49, 0.62]$). With only four midline sites and three features per site, the
+bounded claim is that none of these single-electrode representations approached the
+montage, not that every possible electrode would fail.
+
+A band control changes the interpretation of the full-montage result. With only theta
+and alpha features the full montage decoded valence at $0.60$ ($[0.54, 0.66]$) and the
+four quadrants at $0.46$ ($[0.38, 0.53]$), whereas beta-only features retained $0.70$
+($[0.61, 0.79]$) and $0.62$ ($[0.53, 0.71]$). A substantial part of the
+full-montage affective advantage therefore sits in the beta band, where EMG
+contamination is a known concern \cite{whitham2007emg,goncharova2003emg}. Because
+beta-only decoding was at least as high as the full montage ($0.70$ vs $0.69$ for
+valence, $0.62$ vs $0.58$ for four-class), we do not interpret the montage advantage as
+purely additive cortical information, and we did not measure EMG directly. This is an
+interpretation, not a tested mechanism.
+
+\input{tables/decomp.tex}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/fig4_decomp.pdf}
+  \caption{Decomposition of affective decoding by acquisition step and band. The
+  dashed and dotted lines mark chance for binary (0.50) and four-class (0.25) targets.}
+  \label{fig:decomp}
+\end{figure}
+
+\subsection*{Reliability depends on the timescale}
+Short-lag stability of consecutive 2\,s alpha windows was $r_{SB}=0.016$
+($[-0.08, 0.11]$; $N=109$). This is a short-lag stability measure, not a classical
+reliability coefficient: odd and even 2\,s windows are separated by about two
+seconds. It says
+that a momentary alpha estimate is noisy and is consistent with zero. In the ten-subject
+subset with three repeated imagined-hand runs, block-level alpha power had
+ICC(2,1)$=0.92$, which captures stable between-subject differences. The two are not
+contradictory, and neither is a test--retest coefficient across sessions; published
+single-channel test--retest work reports ICCs of roughly 0.76--0.85 for eyes-closed
+relative power \cite{rogers2016reliability}, but on a different design.
+
+\subsection*{Exploratory motor decoding was inconclusive}
+In the ten-subject subset with imagery runs, balanced accuracy for imagined
+left/right hand was $0.51$ ($[0.47, 0.56]$) at Fz and $0.54$ ($[0.46, 0.62]$) at the
+full montage; a CSP reference reached $0.52$ ($[0.41, 0.63]$) and a sensorimotor subset
+$0.55$ ($[0.44, 0.66]$). Every interval includes chance, and the full-montage decoder
+has more features than trials (64 channels, 45 trials). Figure~\ref{fig:decoding} shows the distribution of these accuracies.
+Because the reference decoder itself did not exceed chance, this arm cannot test the
+decoding hypothesis; it is reported as \textbf{invalid}, not merely inconclusive, and
+is not used for any claim.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/fig5_decoding.pdf}
+  \caption{Exploratory motor-imagery decoding ($N=10$), balanced accuracy by
+  representation. All intervals include chance (0.50).}
+  \label{fig:decoding}
+\end{figure}
+
+\subsection*{Decision matrix}
+Table~\ref{tab:decision} applies the planned 50\% retention rule to the outcomes
+that were estimated.
+
+\begin{table}[H]
+  \centering
+  \caption{Claim-level verdicts.}
+  \label{tab:decision}
+  \begin{tabular}{p{0.40\linewidth}p{0.28\linewidth}p{0.24\linewidth}}
+    \hline
+    Claim & Evidence & Verdict \\
+    \hline
+    Alpha reactivity survives the acquisition chain & Lower 95\% bound of retention 0.9996 & Supported \\
+    Alpha reactivity survives 20--5\,dB noise & Retention 0.86--0.73; retention lower bounds $>$ 0.50; BH $q<0.001$ & Supported \\
+    Alpha reactivity survives 0\,dB noise & Retention 0.59; lower 95\% bound 0.54 $>$ 0.50; attenuated & Supported (attenuated) \\
+    Affective decoding needs a montage & Full 0.69/0.68/0.58; single Fz 0.52/0.56/0.34; valence not distinguishable from chance & Supported for valence; partial for arousal \\
+    Low-cost 14-channel equals the high-end montage & matched $N=12$: 0.67/0.71 vs 0.73/0.66; TOST $p=0.31/0.14/0.23$ at $\pm0.10$ & Not established \\
+    Montage advantage is purely cortical & Beta-only 0.70/0.62; theta+alpha 0.60/0.46; no EMG measure & Not supported (possible EMG contribution) \\
+    Any single site reaches the montage & Fz/Cz/Pz/Oz: valence 0.51--0.53 (chance); four-class 0.33--0.38 (above 0.25) & None reached the montage; bounded claim \\
+    Blink bias in the additive model & Template spectrally orthogonal and symmetric across conditions & Untested (model cannot test H1) \\
+    Pre-registered 60\% balanced-accuracy floor & Valence full passes (lower 0.62); four-class full fails (lower 0.49); Emotiv valence fails (lower 0.57); arousal full/Emotiv pass & Mixed; reported as auxiliary criterion \\
+    Single-trial motor decoding above chance & Reference decoder did not exceed 0.50 & Invalid (not testable) \\
+    Momentary individual-level alpha reliability & Short-lag stability $r_{SB}=0.02$ & Not supported \\
+    Stable individual alpha level & ICC across runs 0.92 (no CI) & Supported (block-level) \\
+    Band-ratio robustness to blinks & Not analysed & Untested \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\noindent
+\textbf{Status.} The alpha arm uses the full 109-subject dataset. The
+affective arm uses 18 high-end recordings and 12 low-cost Emotiv recordings; the Emotiv
+alignment relies on wall-clock timestamps and 8 participants are dropped. The
+full-montage affective advantage is partly beta-band and may include a muscular
+contribution. The motor arm is underpowered; H5 is untested. These scope limits are
+stated in the Discussion and are not treated as results.
