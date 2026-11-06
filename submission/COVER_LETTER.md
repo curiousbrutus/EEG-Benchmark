@@ -53,5 +53,4 @@ and involved no new human participants.
 
 Sincerely,
 Eyyüb Güven
-Cyber Cognition Lab (pre-incorporation), Çorlu, Türkiye
 eyyub.gvn@gmail.com · ORCID 0009-0005-6017-8622

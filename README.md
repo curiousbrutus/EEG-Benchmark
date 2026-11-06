@@ -1,12 +1,12 @@
 # P1 — Single-channel and low-cost EEG: what it can and cannot measure
 
 **Status:** v4.2 (2026-11-06), APA-style author–year citations, BRM declarations and
-Open Practices Statement added. Manuscript: `main.pdf` (19 pp).
+Open Practices Statement added. Manuscript: `main.pdf` (19 pp). Published as Zenodo v4.2.
 
 **Links:** [GitHub](https://github.com/curiousbrutus/EEG-Benchmark) ·
 [OSF project](https://osf.io/8wxqj/) (unregistered project, not a registration) ·
 [Zenodo concept DOI](https://doi.org/10.5281/zenodo.23976431) (always latest version;
-v4.1 version DOI: 10.5281/zenodo.24021733).
+v4.2 version DOI: 10.5281/zenodo.24022534).
 
 ## What the paper does
 
@@ -83,8 +83,7 @@ author. See the manuscript's "Use of generative AI" section.
 ## Citation
 
 Please cite the concept DOI (all versions): **10.5281/zenodo.23976431**. The current
-version is v4.1 (10.5281/zenodo.24021733); a v4.2 update will follow the final format
-review.
+version is v4.2 (10.5281/zenodo.24022534); the concept DOI always resolves to the latest.
 
 ## License
 

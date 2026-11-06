@@ -11,9 +11,10 @@
 
 ## Zenodo versions
 - **Concept DOI:** 10.5281/zenodo.23976431 — cite this; always resolves to latest.
-- v4.1 version DOI: 10.5281/zenodo.24021733 (published 2026-11-06).
+- v4.2 version DOI: 10.5281/zenodo.24022534 (published 2026-11-06, current).
+- v4.1 version DOI: 10.5281/zenodo.24021733 (previous).
 - v4.0 version DOI: 10.5281/zenodo.23976432.
-- The current v4.2 manuscript is **not yet uploaded**; do that only after author approval.
+- The current v4.2 manuscript is published on Zenodo under the concept DOI.
 
 ## Before submission
 - [ ] Read `main.pdf` and confirm the APA-style citations and Declarations wording.
