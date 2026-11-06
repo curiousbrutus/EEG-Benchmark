@@ -1,6 +1,6 @@
 # P1 — Single-channel and low-cost EEG: what it can and cannot measure
 
-**Status:** draft **v4.0** (2026-11-06) — revised prose, AI-use disclosure, Zenodo DOI; final pre-submission version.
+**Status:** v4.0 (2026-11-06) — revised prose, AI-use disclosure, Zenodo DOI; layout variants below.
 **Owner:** Eyyüb Güven · **Branch:** paper production
 **Target venue (verify before submission):** *Behavior Research Methods*.
 
@@ -63,3 +63,8 @@ python scripts/run_all.py --subjects 109
 Generative AI (DeepSeek Harness) was used for code, analysis automation, citation checking,
 reviewer simulation and language editing; all numbers were verified against `results/*.json`,
 all DOIs checked, and the AI is not an author. See the manuscript's "Use of generative AI" section.
+
+## Layout variants
+- `main.pdf` — single-column manuscript (recommended for BRM submission).
+- `main_twocol.pdf` — full two-column variant (`main_twocol.tex`, `tables_twocol/`), 15 pp;
+  nice for reading, but floats leave white space and need polishing before submission.

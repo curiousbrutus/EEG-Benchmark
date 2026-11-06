@@ -87,3 +87,13 @@
   (Applications -> New token) with deposit scopes and place it in a local file; do not
   paste it in chat. Easier: Zenodo -> Settings -> GitHub -> connect the repo and enable it,
   then publish a GitHub release (v4.0) to mint the archive DOI automatically.
+
+## Layout variants (2026-11-06)
+- `main.pdf` — single-column manuscript (19 pp), recommended for BRM submission.
+- `main_twocol.pdf` — full two-column variant (15 pp), generated from `main_twocol.tex`
+  with full-width `figure*`/`table*` floats. It is a readability experiment: it saves
+  pages but has more white space around floats; polish before using for submission.
+- Switch with `\twocolabstracttrue/false` in `main.tex` for the single-column cover style.
+- Zenodo v4.0 (DOI 10.5281/zenodo.23976432) contains the earlier single-column PDF and
+  source zip; any layout/PDF change should be uploaded as a **new version** (v4.1) under
+  concept DOI 10.5281/zenodo.23976431.

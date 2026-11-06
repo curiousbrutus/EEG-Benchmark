@@ -1,0 +1,124 @@
+% =====================================================================
+%  P1 — Single-channel consumer EEG: what it can and cannot measure
+%  Status: draft v4.0 (2026-11-06). Every number comes from results/*.json.
+%  Analysis plan is planned but NOT registered (see PREREGISTRATION.md).
+%  Build: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+% =====================================================================
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{float}
+
+\title{What Single-Channel and Low-Cost EEG\\
+Can and Cannot Measure:\\[2pt]
+A Reproducible Degradation Benchmark\\
+and Reporting Protocol}
+\author{Eyy\"ub G\"uven\thanks{\texttt{eyyub.gvn@gmail.com}. ORCID 0009-0005-6017-8622.}}
+\date{\today}
+
+\begin{document}
+
+\makeatletter
+\twocolumn[{
+\begin{@twocolumnfalse}
+\maketitle
+\begin{abstract}
+\noindent
+Cheap EEG headsets now appear in classrooms, clinics and living rooms, often with claims
+about attention, relaxation and emotion. The hardware is capable; the reporting around
+it is not. A recording made with one dry electrode, a low sampling rate and an unknown
+noise floor cannot be interpreted without knowing how each of those choices changes the
+analysis. We built a benchmark that starts from open high-density recordings and walks
+them down, step by step, to a single-channel consumer setting: one electrode, 128\,Hz,
+1\,\textmu V quantisation, 1--40\,Hz bandwidth, pink noise at 20/10/5/0\,dB and
+synthetic blinks at 5/15/30 per minute. We then asked which standard analyses survive.
+In all 109 subjects of the EEG Motor Movement/Imagery Dataset, alpha reactivity was
+almost unchanged by the acquisition chain when the reference came from the same
+electrode (99.99\% retained; 95\% CI $[0.9996, 1.0001]$), while choosing a frontal site
+cost about 42\% of eyes-closed alpha power (Fz/posterior ratio $0.58$). Noise mattered:
+at 0\,dB the effect fell to 59\% of the reference. Our additive blink model changed the
+estimate by about 0.2\%, but it cannot test real ocular artifacts. In 18 high-end
+recordings from an open affective dataset, valence, arousal and four-quadrant decoding
+were above chance with the full montage ($0.69$, $0.68$, $0.58$). With one electrode,
+valence was no longer detectable ($0.52$; equivalence untested), arousal weakened
+($0.56$; $q=0.050$ in the six-contrast family) and four-class accuracy fell to $0.34$
+(above the $0.25$ chance level but far below the montage). None of four midline sites
+rescued valence, and a band control showed that part of the montage advantage depends
+on beta-band features, possibly muscle activity. A 14-channel consumer headset
+performed similarly to the matched high-end montage ($0.67$/$0.71$ versus $0.73$/$0.66$
+on the 12 shared participants), although a $\pm10$-point equivalence test did not pass.
+Short-lag alpha stability was low ($r_{SB}=0.016$); block-level alpha power was stable
+(ICC(2,1)$=0.92$). The motor arm was invalid because its reference decoder did not
+exceed chance. We provide the code, derived results, decision matrix and reporting
+checklist.
+\end{abstract}
+
+\noindent\textbf{Keywords:} consumer EEG, single-channel, reproducibility, benchmark,
+affective decoding, reporting standards
+\end{@twocolumnfalse}
+}]
+\makeatother
+
+\section{Introduction}
+\input{sections/01-introduction}
+
+\section{Related Work}
+\input{sections/02-related}
+
+\section{Methods}
+\input{sections/03-methods}
+
+\section{Results}
+\input{sections/04-results}
+
+\section{Discussion}
+\input{sections/05-discussion}
+
+\section{Conclusion}
+\input{sections/06-conclusion}
+
+\section*{Use of generative AI}
+Generative AI was used as an analysis and writing tool. The assistant (DeepSeek Harness,
+DeepSeek model) wrote and debugged analysis code, ran the statistical pipeline, generated
+figures and tables from the archived data, checked citation metadata against Crossref and
+DataCite, simulated reviewer feedback during revision, and edited the prose. Every number
+reported here was computed by the scripts in the repository and checked against the
+archived JSON; every cited reference was checked against a DOI record. The AI did not
+generate or alter data, did not produce any image presented as experimental data, and is
+not an author. The author takes full responsibility for the content and conclusions.
+
+\section*{Data and code availability}
+All datasets are public. The EEG Motor Movement/Imagery Dataset is available from
+PhysioNet (\href{https://doi.org/10.13026/C28G6P}{doi:10.13026/C28G6P}). The affective
+dataset is available from Zenodo under CC BY 4.0
+(\href{https://doi.org/10.5281/zenodo.14787743}{doi:10.5281/zenodo.14787743}). DEAP was
+not used: its download page was unreachable during this work, and the DREAMER record is
+access-restricted \cite{katsigiannis2018dreamer}. The analysis repository (degradation pipeline, analysis scripts,
+seeds, environment file and the JSON files behind every number) is public at
+\href{https://github.com/curiousbrutus/EEG-Benchmark}{github.com/curiousbrutus/EEG-Benchmark}
+and mirrored on the OSF project page \href{https://osf.io/8wxqj/}{osf.io/8wxqj}. The
+archived version is deposited at Zenodo under DOI
+\href{https://doi.org/10.5281/zenodo.23976432}{10.5281/zenodo.23976432}. The commit hash
+used for this draft is recorded in \texttt{results/data\_manifest.json}. The single-channel
+reporting checklist is included as \texttt{CHECKLIST.md}. No new human participants were
+recorded.
+
+\section*{Author contributions}
+Conceptualization, methodology, software, analysis, writing: E.G.
+
+\section*{Acknowledgements}
+No funding was received for this work. The author declares no competing interests.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
