@@ -8,4 +8,5 @@ authors:
 type: software
 license: MIT
 repository-code: "https://github.com/curiousbrutus/EEG-Benchmark"
+doi: "10.5281/zenodo.23976431"
 url: "https://osf.io/8wxqj/"
