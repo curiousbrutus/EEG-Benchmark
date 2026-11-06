@@ -12,7 +12,7 @@
 - [x] Source archive built (`submission/P1_source.zip`)
 
 ## Before actual submission
-- [ ] Activate the reserved Zenodo DOI (currently 404) and replace the reserved-DOI sentence
+- [x] Zenodo DOI live (10.5281/zenodo.23976432); manuscript cites it
 - [x] OSF project page live (unregistered; not a registration) — keep explicit wording
 - [ ] Decide whether to use full 109-subject alpha results if the running analysis finishes
 - [ ] Add co-authors/CRediT if supervisors or collaborators are included

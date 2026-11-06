@@ -15,17 +15,23 @@
 \usepackage{graphicx}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{caption}
+\usepackage{multicol}
 \usepackage{float}
 
-\title{What Single-Channel and Low-Cost EEG Can and Cannot Measure:\\
-A Reproducible Degradation Benchmark and Reporting Protocol}
-\author{Eyy\"ub G\"uven\thanks{Cyber Cognition Lab (pre-incorporation), \c{C}orlu, T\"urkiye.
-  \texttt{eyyub.gvn@gmail.com}. ORCID 0009-0005-6017-8622.}}
+\title{What Single-Channel and Low-Cost EEG\\
+Can and Cannot Measure:\\[2pt]
+A Reproducible Degradation Benchmark\\
+and Reporting Protocol}
+\author{Eyy\"ub G\"uven\thanks{\texttt{eyyub.gvn@gmail.com}. ORCID 0009-0005-6017-8622.}}
 \date{Draft v4.0 --- \today}
+
+\newif\iftwocolabstract
+\twocolabstracttrue % set false for a single-column abstract page
 
 \begin{document}
 \maketitle
 
+\iftwocolabstract\begin{multicols}{2}\fi
 \begin{abstract}
 \noindent
 Cheap EEG headsets now appear in classrooms, clinics and living rooms, often with claims
@@ -59,6 +65,8 @@ checklist.
 
 \noindent\textbf{Keywords:} consumer EEG, single-channel, reproducibility, benchmark,
 affective decoding, reporting standards
+\iftwocolabstract\end{multicols}\fi
+\clearpage
 
 \section{Introduction}
 \input{sections/01-introduction}
@@ -109,8 +117,6 @@ Conceptualization, methodology, software, analysis, writing: E.G.
 
 \section*{Acknowledgements}
 No funding was received for this work. The author declares no competing interests.
-Device-related collaboration and co-authorship will be declared with written permission
-if added.
 
 \bibliographystyle{plain}
 \bibliography{refs}

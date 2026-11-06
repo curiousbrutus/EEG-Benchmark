@@ -8,9 +8,7 @@
 - GitHub repo (yalnız gerekli dosyalar, veri yok):
   https://github.com/curiousbrutus/EEG-Benchmark
 - OSF proje sayfası (kayıtlı ön-kayıt değil): https://osf.io/8wxqj/
-- Zenodo DOI: **10.5281/zenodo.23976432** — şu an **404** (rezerve; Zenodo'da
-  "Publish" edilmeden çalışmaz). Yayına göndermeden önce aktive et ve makaledeki
-  "reserved ... will be activated" cümlesini gerçek DOI linkiyle değiştir.
+- Zenodo DOI: **10.5281/zenodo.23976432** — 2026-11-06 itibarıyla **yayınlandı ve canlı**.
 
 ## Senin incelemen için önemli noktalar
 1. **Abstract**: valence tek elektrotta şans; arousal 0.56 sınırda; 4-sınıf 0.34
@@ -69,12 +67,14 @@
 ## AI disclosure and DOI (2026-11-06)
 - Added a "Use of generative AI" section to the manuscript and cover letter. Do not remove
   it: BRM/Springer expects disclosure of AI assistance in writing.
-- Added Zenodo DOI 10.5281/zenodo.23976432 to the Data availability section. It still
-  returns 404 as of 2026-11-06: publish/activate the Zenodo record before uploading, or the
-  DOI will be a dead link. If it is not activated by submission, remove the DOI sentence
-  and say "archive DOI assigned on acceptance".
+- Zenodo DOI 10.5281/zenodo.23976432 was published on 2026-11-06 (code, derived results
+  and manuscript PDF uploaded); it resolves and is cited in Data availability.
 - The prose was revised to reduce formulaic AI-style phrasing and to use a single-author
   voice; verify that you are comfortable with it before submission.
+- Affiliation removed per request; acknowledgement sentence about written permission removed
+  (open datasets need no permission; only co-author consent would be needed if someone is added).
+- Two-column abstract cover page added; set `\twocolabstractfalse` in main.tex for a
+  single-column version. Introduction starts on page 2.
 
 ## v4.0 (2026-11-06) — writing + AI disclosure + DOI
 - Prose revised for a natural single-author voice (abstract, introduction, discussion,
