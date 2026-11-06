@@ -1,159 +1,102 @@
-% 05-discussion — v2.0
-\subsection*{The main result is conditional, not a simple asymmetry}
-The benchmark produced two results that are related but not symmetric in the way a
-single headline suggests. Alpha reactivity survived the acquisition chain almost intact
-once the reference was taken at the same electrode (99.99\% retained), while the
-electrode-site decision itself costs about 42\% of eyes-closed alpha power. Affective
-decoding was above chance from the full montage, but it did not survive reduction to one
-electrode: the valence effect was not detected, arousal remained weak, and four-class
-accuracy fell to $0.34$ (above chance but $0.24$ below the montage). The two arms also differ in reference effect size, trial count, feature count and
-estimator, and the alpha ratio is largely invariant by construction to resampling and
-band-limiting. We therefore do not present the contrast as a mechanistic law about
-"broad alpha" versus "distributed affect", and the abstract and conclusion state
-separate conditional verdicts rather than a single asymmetry. What the benchmark does
-provide is a shared rule for deciding which claims survive.
+% 05-discussion — v4.0
+\subsection*{What survived, and what did not}
+The two halves of the benchmark give different answers. Alpha reactivity survives the
+acquisition chain almost intact: at the same electrode, the chain costs 0.01\% of the
+effect. What costs alpha is the choice of electrode. Fz has about 58\% of the
+eyes-closed alpha power of a posterior average, and this difference is a property of the
+scalp, not of the electronics. Noise also matters, and it matters in a predictable way:
+the effect declines steadily and reaches 59\% of the reference at 0\,dB. Bandwidth,
+sampling rate and quantisation, the specifications usually printed on a consumer
+headset's box, changed the 8--12\,Hz estimate by a negligible amount.
 
-\subsection*{What the affective decomposition shows}
-Three findings constrain the interpretation. First, the acquisition chain that matters
-for consumer hardware --- 128\,Hz, 1\,\textmu V, 1--40\,Hz --- did not hurt affective
-decoding at all; the loss appeared only with one electrode. Second, no single site
-(Fz, Cz, Pz, Oz) recovered valence or four-class decoding, so the result is not a
-frontality artefact; arousal, by contrast, stayed weakly above chance everywhere. Third,
-a band control showed that the full-montage advantage is partly carried by beta-band
-features: theta+alpha-only decoding fell to $0.60$ for valence and $0.46$ for the four
-classes, whereas beta-only decoding retained $0.70$ and $0.62$. Arousal is the
-exception: theta+alpha-only still reached $0.63$ (93\% of the full-montage value), so
-the beta/EMG caveat applies mainly to valence and the four-class target, and it remains
-an interpretation rather than a tested mechanism. Beta is exactly where
-EMG contamination lives \cite{whitham2007emg,goncharova2003emg}, so the full-montage
-number may include a muscular contribution and should not be read as proof that
-distributed cortical activity encodes affect. We did not measure EMG or test a paired
-beta-versus-theta/alpha difference, and beta-only decoding was at least as high as the
-full montage; the claim is therefore an interpretation and a limitation, not a resolved
-mechanism.
+Affective decoding behaves differently. With the full montage, valence, arousal and
+four-quadrant classification are above chance. With one electrode they are not: valence
+is undetectable, arousal is weak, and four-class accuracy falls to 0.34. The contrast is
+not a statement about broad alpha versus distributed affect. The two analyses use
+different effect sizes, different numbers of trials and different estimators, and the
+alpha ratio is partly invariant to the operations we applied. The useful conclusion is
+narrower: within this benchmark, the acquisition chain does not limit alpha, but it does
+limit affective decoding once the spatial representation is reduced to one site.
 
-The low-cost Emotiv arm performed at a similar level to the high-end montage in this
-sample (valence $0.67$, arousal $0.71$, four-class $0.56$; matched $N=12$ high-end
-$0.73$, $0.66$, $0.61$) and the within-subject low-minus-high differences were close to
-zero. A $\pm10$-point equivalence test does not pass, however, so the correct claim is
-"not statistically distinguishable in this sample", not "equivalent". The comparison
-also confounds channel count with feature count, recording units, epoch window and
-condition arm, and 8 of 20 participants are dropped; it is therefore a sanity check, not
-a device validation. The pre-specified 60\% floor is met by Emotiv arousal but not by
-Emotiv valence, while the high-end arm meets it for valence and arousal but not for the
-four-class target.
+\subsection*{Where the affective result goes}
+The decomposition helps. Resampling, quantisation and band-limiting leave full-montage
+accuracy unchanged. The loss appears when the data become one electrode, and it appears
+at all four midline sites we tried. Valence is not distinguishable from chance at Fz,
+Cz, Pz or Oz, and four-class accuracy stays between 0.33 and 0.38. Arousal is the
+exception: it remains weakly above chance at Fz, Pz and Oz before correction, though not
+after correction across the site sweep. We treat the site sweep as exploratory.
 
-\subsection*{The site-matching lesson}
-The naive comparison --- one electrode against a posterior-dominated scalp average ---
-suggested that a single channel retained about 87--90\% of the reactivity effect
-(geometric and mean-ratio estimators respectively). The same-site analysis showed that
-this apparent loss was almost entirely a property of the reference: the chain itself
-cost $0.01\%$, while choosing Fz instead of a posterior average cost about 42\% of
-eyes-closed alpha power (arithmetic ratio $0.58$; geometric ratio $0.49$). The two units answer
-different questions and we report both. This is a known property of scalp power ---
-reference choice and electrode site change absolute band power and can change lateralised
-contrasts \cite{hagemann2001reference} --- but benchmark papers routinely ignore it. Our
-contribution is to quantify its size for single-channel retention and to make same-site
-referencing the primary estimator. We recommend it as the default for single-channel
-benchmarks and consumer-EEG validation studies. A related site caveat points in the same
-direction: Fz is a research midline proxy, not the site used by most single-electrode
-consumer devices, which record frontally (Fp1 in NeuroSky/MindWave, AF7/AF8 in Muse;
-\cite{krigolson2017muse,cannard2021muse}). Frontal sites have less posterior alpha and
-more ocular/muscle contamination, so the measured 42\% site cost is likely an
-underestimate for those devices, and the single-channel affective failure is established
-here for Fz/Cz/Pz/Oz rather than for every possible electrode. The consumer-EEG
-reliability comparison is at Fp1 \cite{rogers2016reliability}, not at Fz, which is why
-we treat the two estimates as related but not interchangeable.
+The band control changes how the montage result should be read. With only theta and alpha
+features, valence falls to 0.60 and four-class accuracy to 0.46. Beta-only features give
+0.70 and 0.62, and beta-only is at least as good as the full montage. Beta is also where
+EMG contamination is most likely \cite{whitham2007emg,goncharova2003emg}. We did not
+record EMG or test a paired beta-versus-theta/alpha difference, so the result is an
+interpretation: part of the montage advantage may be muscular rather than cortical. That
+possibility should be ruled out before the montage number is used as a neural benchmark.
 
-\subsection*{Noise, bandwidth and the blink null}
-The noise arm declined monotonically, and every paired contrast survived FDR control;
-at 0\,dB the effect retained about half of its reference size but remained detectable.
-The practical implication is that recording quality and noise control matter more than a
-headset's nominal sampling rate or resolution, which changed 8--12\,Hz power by less
-than 1\%. The blink result is a model check rather than a null result about real blinks:
-the injected template has essentially no 8--12\,Hz energy and the same rate was added to
-both conditions, so a small effect was almost guaranteed. The pre-specified blink prediction (H1) is therefore untested rather than supported. Real blinks are large,
-frontal and asymmetric between eyes-open and eyes-closed recordings, and that
-interaction is the next experiment (see Limitations).
+The low-cost Emotiv arm is a useful sanity check. Its accuracy is close to the high-end
+montage on the 12 participants present in both datasets, and the matched differences are
+small. The equivalence test does not pass, however, so the appropriate description is
+"similar in this sample", not "equivalent". The comparison also mixes channel count,
+feature count, recording units, epoch window and condition arm, and eight participants
+are missing from the Emotiv analysis. It is a check, not a device validation.
 
-\subsection*{Reliability depends on the timescale}
-Odd and even 2\,s windows are separated by about two seconds, so the coefficient is a
-short-lag stability measure, not a classical reliability coefficient.
-Its value ($r_{SB}=0.016$) says that a momentary alpha estimate is noisy; the block-level
-ICC ($0.92$) says that stable individual differences are measurable. Published
-consumer-EEG test--retest work reports ICCs around 0.76--0.85 for eyes-closed relative
-power \cite{rogers2016reliability}; our estimate is not directly comparable because it
-uses a different design, but the two are not in tension. A consumer product that reports
-"your alpha right now" is making the first kind of claim and should be judged
-accordingly.
+\subsection*{What this means for reporting}
+The first lesson is about reference choice. Comparing one electrode with a whole-head
+average confounds channel count with electrode site, and a benchmark that does so will
+understate what a single channel retains. The correction is simple: compare the same
+site before and after degradation. Reference and site dependence of scalp power is not a
+new observation \cite{hagemann2001reference}; what is new here is the size of the effect
+for a single-channel benchmark, and the recommendation to make same-site comparison the
+default.
 
-\subsection*{Positioning against prior work}
-Our alpha arm overlaps with device-comparison studies, including one that compared four
-systems on five participants across two visits with Fp1 as the common electrode and
-explicit eyes-closed/eyes-open and test--retest analyses \cite{ratti2017comparison}. We
-therefore do not claim that nobody has examined consumer spectral reliability. The
-contribution is the controlled degradation grid, the same-site retention metric, the
-claim-level decision matrix, and the decomposition of the affective collapse. Work on
-channel subsets for emotion decoding has shown that a well-chosen small montage can
-perform surprisingly well \cite{zheng2015channels}; our result adds the complementary
-finding that a random single site does not, and that beta-band features can inflate
-full-montage performance.
+The second lesson is about the site itself. Fz is a convenient research midline
+electrode, but most single-electrode consumer devices record at the forehead: Fp1 in
+NeuroSky/MindWave and AF7/AF8 in Muse \cite{krigolson2017muse,cannard2021muse}. Frontal
+sites have less posterior alpha and more ocular and muscle contamination, so the 42\%
+site cost we measured is probably an underestimate for those devices. The consumer-EEG
+reliability comparison we cite is also at Fp1 \cite{rogers2016reliability}, not Fz. The
+single-channel affective failure is established here for Fz, Cz, Pz and Oz, not for every
+possible electrode.
 
-\subsection*{What the paper can and cannot claim}
-The paper can claim that, in the datasets analysed here, the acquisition chain that
-consumer hardware changes is not what limits alpha reactivity, that electrode choice is
-the dominant cost for single-channel alpha, and that affective decoding from one
-electrode does not work for valence or quadrant while arousal survives weakly. It
-cannot claim that any real single-channel consumer device preserves the effect, because
-no such device was measured; it cannot claim that blinks are harmless, because the blink
-model is simplified; it cannot claim equivalence between the Emotiv and the high-end
-system, because the equivalence test did not pass; it cannot claim that the
-full-montage affective result is purely cortical, because the beta control points to a
-possible EMG contribution; and it cannot claim that single-channel motor decoding is
-impossible, because that arm is underpowered. The framing is a methods and
-reproducibility contribution with conditional findings, not a device validation.
+The third lesson is about timescale. A 2\,s alpha window is a noisy estimate of a
+momentary state; the odd--even correlation is a short-lag stability measure, not a
+reliability coefficient, and its value near zero should not be read as "alpha is
+unreliable". Block-level alpha power was much more stable (ICC 0.92). A product that
+reports "your alpha right now" and a study that reports a stable individual difference
+are making different claims.
 
 \subsection*{Limitations}
-The alpha arm uses all 109 subjects. The affective arm
-uses 18 high-end recordings and 12 low-cost Emotiv recordings; the Emotiv alignment
-relies on wall-clock timestamps, eight participants are dropped (three empty files, two
-header-only files and three alignment failures) and the signal is in device units rather
-than calibrated microvolts. Artifact handling is minimal (no ICA/Autoreject), so beta
-features may be contaminated by EMG. The blink model lacks topography, is symmetric
-between conditions, and cannot test the real ocular interaction; H1 is untested. Labels
-are normative IAPS quadrant assignments, not participants' own ratings, and within-subject
-cross-validation over about 10 trials per quadrant confounds emotional category with the
-low-level visual properties of the picture sets; a picture-level (leave-one-picture-out)
-generalisation test and a label-permutation null were not run. The reference electrode is
-as provided by the archive; run order is fixed (eyes open before eyes closed); no
-test--retest ICC across sessions is available, and the block ICC has no confidence
-interval. Feature counts differ between the full montage (198) and the single channel
-(3), and only four midline sites were swept, so the representation comparison confounds
-information, dimensionality and site; the single-site failure is bounded to those sites.
-The 0\,dB noise level is defined on broadband variance while the outcome is 8--12\,Hz,
-so the in-band SNR is unreported and part of the attenuation is estimator compression;
-eight of 109 subjects had negative reference reactivity. The analysis plan was not registered,
-several pre-specified items (Fp1/Cz sensitivity, the 60\% practical floor, AUC and
-median-split outcomes) were dropped or changed, and the study should be read as
-exploratory in the strict sense. The motor arm is invalid because its reference decoder
-did not exceed chance (and is also underpowered); the equivalence test is a small-sample TOST whose margin exceeds
-the achievable half-width for valence and four-class; and the repository has no public
-DOI or remote yet (the availability statement says it will be deposited). A full-subject run, a real single-channel device, a validated
-artifact model and a registration are required before the decision matrix is treated as
-a standard.
+The alpha arm uses all 109 subjects, but only the first 30 have the repeated motor runs
+needed for the ICC estimate; the ICC therefore rests on a small subset and has no
+confidence interval. The affective arm uses 18 high-end recordings, and the Emotiv arm
+covers 12 participants. The Emotiv signal is in device units, its epoch window differs
+slightly from the BrainVision epochs, and the archive's two condition arms are not
+distinguished. We did not measure a real single-channel device, so the single-channel
+condition is a simulation of that device, not the device itself. The blink model is
+additive, spectrally orthogonal to alpha, and applied equally to both conditions; it
+cannot test the real ocular interaction, and the pre-specified blink hypothesis is
+therefore untested. Artifact handling is minimal: no ICA or Autoreject, so the beta-band
+features may be contaminated. The affective labels are normative IAPS categories rather
+than participants' own ratings, and we did not test picture-level generalisation or a
+label-permutation null. Only four midline sites were swept, and the single-channel
+condition has three features against 198 for the full montage, so the representation
+comparison confounds information with dimensionality. The 0\,dB level is defined on
+broadband variance, the in-band signal-to-noise ratio is not reported, and the ratio
+estimator can compress the effect. Eight of 109 subjects had a negative reference
+reactivity, which is expected for a resting-state contrast but limits the precision of
+the mean. The analysis plan was not registered; several pre-specified items (Fp1/Cz
+sensitivity, the 60\% floor, AUC and median-split outcomes) were changed or dropped, and
+the study is exploratory in the strict sense. The motor arm is invalid, not merely
+underpowered, because its reference decoder did not exceed chance. Finally, the
+equivalence test uses a small sample and a margin that is wide relative to the observed
+differences.
 
-\subsection*{Implications for reporting and applied work}
-For authors, the practical rule is to state the acquisition constraints, compare against
-a same-site reference, report which band carries the effect, and use the decision matrix
-to decide whether a claim is supportable. For reviewers, the rule is to ask for that
-mapping instead of a general judgement about device quality. For applied work, the
-preliminary result supports two narrow statements before a study is designed:
-single-channel alpha reactivity is limited mainly by electrode choice and noise, so both
-drive the protocol; and emotion decoding should not be planned on a single electrode
-without a pilot, while a low-cost multi-channel headset may be adequate for arousal.
-
-\subsection*{Ethics and positioning}
-The paper makes no therapeutic, diagnostic or safety claim and evaluates no commercial
-product's marketing. Its value is a quantified, partly null result, an honest
-decomposition, and a reporting discipline for single-channel work, released with code and
-derived data.
+\subsection*{Where to go next}
+The obvious next step is a real single-channel device. A small study with a consumer
+headset, raw samples and the same pipeline would show whether the simulation is
+realistic, and whether the site cost is larger at the forehead, as we expect. A second
+step is to measure EMG or add a high-frequency control to separate muscular from
+cortical contributions to the beta-band result. A third is to register the analysis
+plan and repeat the alpha arm with a pre-specified decision rule. None of these requires
+new theory; they require better measurement, which is the point of the benchmark.

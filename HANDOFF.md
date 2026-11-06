@@ -65,3 +65,25 @@
       live DOI or keep "assigned on acceptance" as currently written.
 - [ ] Rebuild (`latexmk -pdf main.tex`), read the PDF, submit with `submission/P1_source.zip`.
 - [ ] Optional: update the OSF project description to the final abstract.
+
+## AI disclosure and DOI (2026-11-06)
+- Added a "Use of generative AI" section to the manuscript and cover letter. Do not remove
+  it: BRM/Springer expects disclosure of AI assistance in writing.
+- Added Zenodo DOI 10.5281/zenodo.23976432 to the Data availability section. It still
+  returns 404 as of 2026-11-06: publish/activate the Zenodo record before uploading, or the
+  DOI will be a dead link. If it is not activated by submission, remove the DOI sentence
+  and say "archive DOI assigned on acceptance".
+- The prose was revised to reduce formulaic AI-style phrasing and to use a single-author
+  voice; verify that you are comfortable with it before submission.
+
+## v4.0 (2026-11-06) — writing + AI disclosure + DOI
+- Prose revised for a natural single-author voice (abstract, introduction, discussion,
+  conclusion, plus targeted edits). AI-assistance disclosure added to manuscript and
+  cover letter; do not remove it.
+- Zenodo DOI 10.5281/zenodo.23976432 added to Data availability. **It is still 404**:
+  publish/activate the record before uploading, otherwise remove the DOI sentence and use
+  "archive DOI assigned on acceptance".
+- If you want the agent to deposit through the API, create a Zenodo personal access token
+  (Applications -> New token) with deposit scopes and place it in a local file; do not
+  paste it in chat. Easier: Zenodo -> Settings -> GitHub -> connect the repo and enable it,
+  then publish a GitHub release (v4.0) to mint the archive DOI automatically.

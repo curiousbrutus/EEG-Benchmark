@@ -1,6 +1,6 @@
 # P1 — Single-channel and low-cost EEG: what it can and cannot measure
 
-**Status:** draft **v3.9** (2026-11-05) — full N=109 alpha arm; final pre-submission review fixes applied.
+**Status:** draft **v4.0** (2026-11-06) — revised prose, AI-use disclosure, Zenodo DOI; final pre-submission version.
 **Owner:** Eyyüb Güven · **Branch:** paper production
 **Target venue (verify before submission):** *Behavior Research Methods*.
 
@@ -58,3 +58,8 @@ python scripts/00_download_zenodo.py
 python scripts/01_download.py --subjects 109 --runs 1 2
 python scripts/run_all.py --subjects 109
 ```
+
+## Use of generative AI
+Generative AI (DeepSeek Harness) was used for code, analysis automation, citation checking,
+reviewer simulation and language editing; all numbers were verified against `results/*.json`,
+all DOIs checked, and the AI is not an author. See the manuscript's "Use of generative AI" section.

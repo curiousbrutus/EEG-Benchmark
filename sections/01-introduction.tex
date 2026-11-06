@@ -1,63 +1,64 @@
-% 01-introduction — v1.0
-\subsection*{Consumer EEG is everywhere; its evidence base is not}
-Low-cost EEG headsets are now sold as attention trainers, relaxation aids, sleep
-gadgets and emotion sensors. The hardware is real: consumer devices can record above
-the noise floor of the relevant bands, and some have been validated against research
-amplifiers for event-related potentials \cite{krigolson2017muse,badcock2015emotiv}, while
-resting-state comparisons report differences in spectral estimates and in test--retest
-behaviour across systems \cite{ratti2017comparison,cannard2021muse}.
-What is usually missing is the information needed to decide whether a given recording
-supports a given claim: which electrode, which sampling rate, which filters, how
-artifacts were handled, how many trials, and how the feature relates to a full-montage
-reference.
+% 01-introduction — v4.0
+\subsection*{A device in search of a method}
+Low-cost EEG headsets are sold as attention trainers, relaxation aids, sleep gadgets and
+emotion sensors. Some of them record real neural signal: consumer devices have been
+validated against research amplifiers for event-related potentials
+\cite{krigolson2017muse,badcock2015emotiv}, and resting-state comparisons show that
+spectral estimates and test--retest behaviour differ across systems
+\cite{ratti2017comparison,cannard2021muse}. The problem is what happens after the
+recording. A paper may report that alpha power increased during relaxation without
+saying which electrode was used, how the signal was filtered, whether blinks were
+removed, or how the result compares with a conventional montage. A reader cannot tell
+whether the finding reflects a cognitive process or an artefact of the recording setup.
 
-This gap has two consequences. First, results are hard to reproduce: a claim such as
-"alpha power increases during relaxation" can be produced by a well-configured
-research system or by a badly filtered consumer recording, and the paper often does not
-let a reader tell the difference. Second, the same gap makes it easy to overclaim: a
-single frontal channel measuring a mixture of cortical activity, eye movements and
-muscle noise \cite{whitham2007emg} is presented as if it measured a specific cognitive
-process.
+This matters for two reasons. First, the same claim can be produced by very different
+pipelines, so the result is difficult to reproduce. Second, a single frontal electrode
+picks up cortical activity together with eye movements and muscle noise
+\cite{whitham2007emg}; presenting that mixture as a specific cognitive measure invites
+overclaiming. Device-comparison studies are useful, but they answer a different
+question: whether one headset is close enough to a reference amplifier under one
+protocol. They do not tell a reader which analyses still work when the acquisition is
+reduced.
 
-\subsection*{Why a benchmark rather than another device comparison}
-Device-comparison studies answer "is headset X close to amplifier Y?" under one
-laboratory protocol. They do not answer the question a reader of a consumer-EEG paper
-actually has: \emph{given this acquisition setup, which of the standard analyses still
-work?} Answering that requires systematically degrading high-quality recordings along
-the dimensions consumer hardware changes --- channel count, sampling rate, amplitude
-resolution, bandwidth, noise, ocular contamination --- and measuring which analyses
-survive, with a full-montage analysis as the reference ceiling.
+\subsection*{What this paper does}
+We take high-quality open recordings and degrade them one step at a time towards what a
+cheap headset provides. The steps are explicit: a single electrode, 128\,Hz sampling,
+1\,\textmu V quantisation, 1--40\,Hz band-limiting, pink noise at four levels, and
+synthetic blinks at three rates. Each step is reported separately, so a reader can see
+which manipulation matters. The benchmark has four analysis families: alpha
+reactivity, affective decoding, motor decoding (exploratory) and reliability. The
+reference is always the same recording before degradation, and, where it matters, the
+same electrode rather than a whole-head average.
 
-Open datasets make this possible without new participants. The EEG Motor
-Movement/Imagery Dataset provides 109 subjects, 64 channels and both eyes-open and
-eyes-closed baselines \cite{schalk2009eegbci}; an open low-cost-versus-high-end
-affective dataset provides labelled emotional trials recorded with a high-end system
-\cite{sanchezreolid2022emotion,sanchezreolid2025dataset}. Both are widely used,
-publicly documented and have known acquisition parameters.
+Two open datasets make this feasible. The EEG Motor Movement/Imagery Dataset provides
+109 subjects, 64 channels and eyes-open and eyes-closed baselines
+\cite{schalk2009eegbci}. An open affective dataset contains 20 participants recorded
+simultaneously with a low-cost Emotiv EPOC+ and a high-end BrainVision system, with
+valence--arousal quadrant labels \cite{sanchezreolid2022emotion,sanchezreolid2025dataset}.
+The first dataset is used for the degradation grid; the second lets us compare a real
+low-cost device with a high-end montage and with the same high-end data reduced to one
+electrode.
 
-\subsection*{Contributions}
-\begin{enumerate}
-  \item A \textbf{reproducible degradation pipeline} that converts multi-channel
-        recordings into single-channel consumer conditions in explicit, separately
-        reported steps (channel selection, 128\,Hz resampling, 1\,\textmu V
-        quantisation, 1--40\,Hz band-limiting, pink sensor noise at four SNR levels,
-        synthetic blink contamination at three rates, and a combined condition).
-  \item A \textbf{planned benchmark} of four analysis families: alpha
-        reactivity, affective decoding, motor decoding (exploratory) and reliability.
-  \item Two results that point in opposite directions. Alpha reactivity is
-        essentially unaffected by the acquisition chain once the reference is
-        site-matched (99.99\% retained), so the chain itself is not the limiting factor;
-        electrode choice and noise are. Affective
-        valence decoding is above chance from a full montage ($0.69$) but is
-        not detected from a single electrode ($0.52$); arousal is reduced ($0.68$ to $0.56$)
-        rather than abolished.
-  \item An \textbf{open reporting checklist} for single-channel studies, derived from
-        COBIDAS MEEG \cite{pernet2020cobidas}, EEG-BIDS \cite{pernet2019bids} and, as a
-        general reporting model, the CRED-nf checklist \cite{ros2020crednf}, and released
-        with code and derived data.
-\end{enumerate}
+\subsection*{What we find}
+The results are mixed, and the mix is the point. Alpha reactivity is robust to the
+acquisition chain: once the reference is taken at the same electrode, 99.99\% of the
+effect remains. The choice of electrode, however, costs about 42\% of eyes-closed alpha
+power, and noise reduces the effect monotonically. In the affective data, the full
+montage decodes valence, arousal and quadrant above chance, but a single electrode does
+not: valence is no longer detectable, arousal weakens, and four-class accuracy drops
+close to the level expected from a weak classifier. A band control suggests that part of
+the montage advantage comes from beta-band features, which may include muscle activity.
+A 14-channel Emotiv performs about as well as the high-end montage in this sample, but
+the equivalence test does not pass, so the comparison remains descriptive.
 
-We emphasise what this paper is \emph{not}: it is not a clinical or wellness
-intervention study, it does not validate any commercial product, and it makes no claim
-that a particular headset is "good" or "bad". It provides a reference against which
-such claims can be evaluated.
+The contributions are: a reproducible degradation pipeline; a decision matrix that maps
+each result to a claim-level verdict; a same-site retention estimate for alpha; a
+decomposition of the affective result into representation, site and band effects; and a
+reporting checklist for single-channel studies, based on COBIDAS MEEG
+\cite{pernet2020cobidas}, EEG-BIDS \cite{pernet2019bids} and the CRED-nf checklist
+\cite{ros2020crednf}. The code, the derived results and the JSON files behind every
+number are archived with the paper.
+
+The paper is not a clinical or wellness intervention study, and it does not validate a
+commercial product. It is a methods study: it measures what different analyses can
+support, and it shows where the limits lie.

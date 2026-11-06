@@ -42,6 +42,12 @@ https://osf.io/8wxqj/. A Zenodo archive DOI will be assigned on acceptance. The
 repository state used for the submission is identified by a commit hash in the data
 manifest.
 
+**Use of generative AI.** Generative AI (DeepSeek Harness, DeepSeek model) was used for
+analysis-code development, automation of the statistical pipeline, citation-metadata
+checking, simulated reviewer feedback and language editing. All numerical results were
+verified against the archived analysis outputs, all references were checked against DOI
+records, and the AI is not an author. This use is disclosed in the manuscript.
+
 We confirm this work is not under consideration elsewhere, has no competing interests,
 and involved no new human participants.
 
