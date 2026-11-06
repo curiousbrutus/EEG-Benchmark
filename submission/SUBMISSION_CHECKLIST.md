@@ -3,6 +3,7 @@
 ## Manuscript
 - [x] Numbers match `results/*.json` (v3.0)
 - [x] All citations resolve; DOIs verified via Crossref/DataCite
+- [x] APA-style author–year citations (natbib/apalike); BRM Declarations and Open Practices Statement added
 - [x] No placeholder text; no internal file references
 - [x] Figures 1–5 referenced and captioned; grayscale-safe
 - [x] Scope stated honestly: N=109 alpha; N=18 high-end + N=12 Emotiv; motor invalid

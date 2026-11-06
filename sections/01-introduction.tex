@@ -3,9 +3,9 @@
 Low-cost EEG headsets are sold as attention trainers, relaxation aids, sleep gadgets and
 emotion sensors. Some of them record real neural signal: consumer devices have been
 validated against research amplifiers for event-related potentials
-\cite{krigolson2017muse,badcock2015emotiv}, and resting-state comparisons show that
+\citep{krigolson2017muse,badcock2015emotiv}, and resting-state comparisons show that
 spectral estimates and test--retest behaviour differ across systems
-\cite{ratti2017comparison,cannard2021muse}. The problem is what happens after the
+\citep{ratti2017comparison,cannard2021muse}. The problem is what happens after the
 recording. A paper may report that alpha power increased during relaxation without
 saying which electrode was used, how the signal was filtered, whether blinks were
 removed, or how the result compares with a conventional montage. A reader cannot tell
@@ -14,7 +14,7 @@ whether the finding reflects a cognitive process or an artefact of the recording
 This matters for two reasons. First, the same claim can be produced by very different
 pipelines, so the result is difficult to reproduce. Second, a single frontal electrode
 picks up cortical activity together with eye movements and muscle noise
-\cite{whitham2007emg}; presenting that mixture as a specific cognitive measure invites
+\citep{whitham2007emg}; presenting that mixture as a specific cognitive measure invites
 overclaiming. Device-comparison studies are useful, but they answer a different
 question: whether one headset is close enough to a reference amplifier under one
 protocol. They do not tell a reader which analyses still work when the acquisition is
@@ -32,9 +32,9 @@ same electrode rather than a whole-head average.
 
 Two open datasets make this feasible. The EEG Motor Movement/Imagery Dataset provides
 109 subjects, 64 channels and eyes-open and eyes-closed baselines
-\cite{schalk2009eegbci}. An open affective dataset contains 20 participants recorded
+\citep{schalk2009eegbci}. An open affective dataset contains 20 participants recorded
 simultaneously with a low-cost Emotiv EPOC+ and a high-end BrainVision system, with
-valence--arousal quadrant labels \cite{sanchezreolid2022emotion,sanchezreolid2025dataset}.
+valence--arousal quadrant labels \citep{sanchezreolid2022emotion,sanchezreolid2025dataset}.
 The first dataset is used for the degradation grid; the second lets us compare a real
 low-cost device with a high-end montage and with the same high-end data reduced to one
 electrode.
@@ -55,8 +55,8 @@ The contributions are: a reproducible degradation pipeline; a decision matrix th
 each result to a claim-level verdict; a same-site retention estimate for alpha; a
 decomposition of the affective result into representation, site and band effects; and a
 reporting checklist for single-channel studies, based on COBIDAS MEEG
-\cite{pernet2020cobidas}, EEG-BIDS \cite{pernet2019bids} and the CRED-nf checklist
-\cite{ros2020crednf}. The code, the derived results and the JSON files behind every
+\citep{pernet2020cobidas}, EEG-BIDS \citep{pernet2019bids} and the CRED-nf checklist
+\citep{ros2020crednf}. The code, the derived results and the JSON files behind every
 number are archived with the paper.
 
 The paper is not a clinical or wellness intervention study, and it does not validate a

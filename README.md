@@ -1,70 +1,91 @@
 # P1 — Single-channel and low-cost EEG: what it can and cannot measure
 
-**Status:** v4.0 (2026-11-06) — revised prose, AI-use disclosure, Zenodo DOI; layout variants below.
-**Owner:** Eyyüb Güven · **Branch:** paper production
-**Target venue (verify before submission):** *Behavior Research Methods*.
+**Status:** v4.2 (2026-11-06), APA-style author–year citations, BRM declarations and
+Open Practices Statement added. Manuscript: `main.pdf` (19 pp).
 
-## Ne iddia ediyoruz (tek paragraf)
+**Links:** [GitHub](https://github.com/curiousbrutus/EEG-Benchmark) ·
+[OSF project](https://osf.io/8wxqj/) (unregistered project, not a registration) ·
+[Zenodo concept DOI](https://doi.org/10.5281/zenodo.23976431) (always latest version;
+v4.1 version DOI: 10.5281/zenodo.24021733).
 
-Düşük maliyetli EEG cihazlarıyla yapılan "dikkat/rahatlama/duygu" iddiaları, kaydın o
-iddiayı destekleyip desteklemediğini gösteren bilgiyle birlikte raporlanmıyor. Açık çok
-kanallı kayıtları tek kanallı tüketici koşullarına indirgeyen **tekrarlanabilir bir
-bozulma benchmark'ı** kuruyoruz ve hangi analizlerin ayakta kaldığını ölçüyoruz. Sonuçlar
-koşullu: alfa reaktivitesi edinim zincirinden neredeyse hiç etkilenmiyor (**%99.99**,
-site-eşleşmeli), ama **elektrot seçimi** EC alfa gücünün ~%42'sine mal oluyor; gürültü
-etkiyi monoton olarak azaltıyor (0 dB'de referansın ~0.59'u). Duygu dekodlamada tam
-montaj şansın üstünde (valence 0.69), tek elektrotta valence şansa düşüyor (0.52),
-arousal zayıf kalıyor (0.56, düzeltme sonrası sınırda). Ayrıştırma, tam-montaj
-avantajının bir kısmının beta bandında (muhtemelen EMG) olduğunu ve hiçbir tek sitein
-valence'i kurtarmadığını gösteriyor. Katkı: yöntem + ayrıştırma + karar matrisi +
-tekrarlanabilirlik; cihaz validasyonu değil.
+## What the paper does
 
-## Analiz durumu (v3.2, N=109)
+Low-cost EEG headsets are used for claims about attention, relaxation and emotion, often
+without enough information to judge whether a recording can support them. This project
+builds a reproducible degradation benchmark from open multi-channel recordings: one
+electrode, 128 Hz sampling, 1 µV quantisation, 1–40 Hz band-limiting, pink noise at
+20/10/5/0 dB, synthetic blinks at 5/15/30 per minute, and a combined condition. Four
+analysis families are tested: alpha reactivity, affective decoding, motor decoding
+(exploratory) and reliability.
 
-| Analiz | Sonuç | Yorum |
-| :--- | :--- | :--- |
-| Alfa — tam montaj | 0.91 [0.78, 1.04] | referans |
-| Alfa — Fz tek kanal zinciri | 0.77 [0.65, 0.89] | naive kıyas (site karışık) |
-| **Alfa — edinim zinciri, site-eşleşmeli** | **−0.0001 log → %99.99 korundu** [0.9996, 1.0001] | kanal/Hz/kuantizasyon/bant sorun değil |
-| **Alfa — elektrot sitesi maliyeti** | Fz EC alfa / posterior **0.58** [0.52,0.63] | tek kanalın asıl maliyeti site seçimi |
-| Gürültü 20/10/5/0 dB | 0.76 / 0.71 / 0.60 / 0.38; geometrik koruma 0.86/0.82/0.73/0.59 | monoton; BH-q < 0.001 |
-| Blink 5/15/30/dk | 0.77 / 0.77 / 0.77 | artımlı etki −0.002 log; model kontrolü |
-| **Duygu — tam montaj (N=18)** | valence **0.69** · arousal **0.68** · 4-sınıf 0.58 | şansın üstünde |
-| **Duygu — tek kanal (Fz)** | valence **0.52** (şans) · arousal 0.56 (q≈0.05) · 4-sınıf 0.34 | valence şans |
-| **Ayrıştırma (N=18)** | tek site Fz/Cz/Pz/Oz: valence 0.51–0.53, 4-sınıf 0.33–0.38 | hiçbiri montaja yaklaşmıyor |
-| **Bant kontrolü (N=18)** | theta+alpha-only 0.60/0.46; beta-only 0.70/0.62 | montaj avantajı kısmen beta |
-| **Emotiv 14ch (N=12)** | valence 0.67 · arousal 0.71 · 4-sınıf 0.56; eşleşmiş yüksek-donanım 0.73/0.66/0.61 | benzer ama **TOST eşdeğerliği yok** |
-| Motor dekodlama | N=10: referans bile şans (0.54 [0.46,0.62]) | **geçersiz** |
-| Short-lag stabilite (N=109) | 0.016 [−0.08, 0.11] | kısa pencere; güvenilirlik katsayısı değil |
-| Blok ICC(2,1) (N=10) | 0.92 (CI yok) | kararlı bireysel fark |
+Main results:
 
-Veri setleri: EEGBCI (PhysioNet; 109 denek) + Zenodo 14787743 (BrainVision + Emotiv;
-CC BY 4.0). DEAP kullanılmadı (site kapalı); DREAMER restricted.
-Ham çıktı: `results/*.json`; tablolar `tables/*.tex` (`scripts/28_make_tables.py`).
+- Alpha reactivity survives the acquisition chain at the same electrode (99.99%
+  retained); electrode choice costs about 42% of eyes-closed alpha power; noise
+  attenuates the effect monotonically.
+- In the open affective dataset (18 high-end recordings, 12 Emotiv recordings), full
+  montage valence/arousal/four-class accuracy is 0.69/0.68/0.58; with one electrode,
+  valence is not detectable (0.52), arousal weakens (0.56) and four-class accuracy falls
+  to 0.34. None of four midline sites rescues valence.
+- A band control shows that part of the montage advantage is carried by beta-band
+  features, possibly muscle activity.
+- A 14-channel Emotiv performs similarly to the matched high-end montage, but a
+  ±10-point equivalence test does not pass.
+- Short-lag alpha stability is low; block-level alpha power is stable (ICC 0.92).
+- The motor arm is invalid because its reference decoder does not exceed chance.
 
-## Links
-- OSF project (unregistered project page): https://osf.io/8wxqj/
-- GitHub: https://github.com/curiousbrutus/EEG-Benchmark
-- Zenodo DOI: 10.5281/zenodo.23976432 (reserved; activate before submission)
+## Repository contents
 
-## Submission
-`submission/` içinde cover letter, supplementary, source zip, checklist. Üçüncü hakem
-turu raporları `reviews3/`'te; bulgularının tamamı v3.x'e işlendi (kalan: public DOI,
-nihai proofread).
+| Path | Content |
+| :--- | :--- |
+| `main.tex`, `sections/` | manuscript source (single-column) |
+| `main.pdf` | compiled manuscript |
+| `main_twocol.tex`, `main_twocol.pdf`, `tables_twocol/` | optional full two-column layout variant |
+| `tables/` | LaTeX tables generated from `results/*.json` |
+| `figures/` | figures generated from `results/*.json` |
+| `scripts/` | download, degradation, analysis and figure code |
+| `results/*.json` | derived results behind every number reported |
+| `CHECKLIST.md` | single-channel reporting checklist |
+| `PREREGISTRATION.md` | pre-specified plan, unregistered; deviations log |
+| `submission/` | cover letter, supplementary material, submission checklist |
+| `CITATION.cff` | citation metadata |
+
+Raw and derived data are **not** included. `scripts/00_download_zenodo.py` downloads the
+affective archive; `scripts/01_download.py` downloads the EEGBCI files. Data are public
+(PhysioNet; Zenodo CC BY 4.0).
 
 ## Reproduce
+
 ```bash
 python scripts/00_download_zenodo.py
 python scripts/01_download.py --subjects 109 --runs 1 2
 python scripts/run_all.py --subjects 109
 ```
 
-## Use of generative AI
-Generative AI (DeepSeek Harness) was used for code, analysis automation, citation checking,
-reviewer simulation and language editing; all numbers were verified against `results/*.json`,
-all DOIs checked, and the AI is not an author. See the manuscript's "Use of generative AI" section.
+Environment: `requirements.txt` (pinned versions in `requirements.lock.txt`).
 
-## Layout variants
-- `main.pdf` — single-column manuscript (recommended for BRM submission).
-- `main_twocol.pdf` — full two-column variant (`main_twocol.tex`, `tables_twocol/`), 15 pp;
-  nice for reading, but floats leave white space and need polishing before submission.
+## Layout
+
+The default is a single-column manuscript with a single-column abstract page. Set
+`\twocolabstractfalse` in `main.tex` for the standard single-column abstract; set
+`\twocolabstracttrue` for a two-column abstract cover page. The full two-column variant
+is `main_twocol.tex` / `main_twocol.pdf`; it is a readability experiment and needs float
+polishing before submission.
+
+## Use of generative AI
+
+Generative AI (DeepSeek Harness, DeepSeek model) was used for analysis-code development,
+automation of the statistical pipeline, citation-metadata checking, simulated reviewer
+feedback and language editing. All numerical results were verified against
+`results/*.json`, all references were checked against DOI records, and the AI is not an
+author. See the manuscript's "Use of generative AI" section.
+
+## Citation
+
+Please cite the concept DOI (all versions): **10.5281/zenodo.23976431**. The current
+version is v4.1 (10.5281/zenodo.24021733); a v4.2 update will follow the final format
+review.
+
+## License
+
+Code: MIT (`LICENSE`). Manuscript text and figures: please cite the paper.

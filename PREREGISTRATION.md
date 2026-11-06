@@ -6,7 +6,7 @@ plan was drafted before the final analyses but no timestamped registration exist
 Only the "Deviations" section changed after drafting.
 
 **Date drafted:** 2026-11-03
-**Author:** Eyyüb Güven (Cyber Cognition Lab, pre-incorporation)
+**Author:** Eyyüb Güven
 
 ## 1. Research questions
 

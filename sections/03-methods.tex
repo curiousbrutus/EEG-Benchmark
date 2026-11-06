@@ -1,11 +1,11 @@
 % 03-methods — v1.0
 \subsection*{Datasets}
-\textbf{EEG Motor Movement/Imagery Dataset} \cite{schalk2009eegbci}. All 109 subjects were used: 64 channels at 160\,Hz, runs 1--2 for the
+\textbf{EEG Motor Movement/Imagery Dataset} \citep{schalk2009eegbci}. All 109 subjects were used: 64 channels at 160\,Hz, runs 1--2 for the
 eyes-open and eyes-closed baselines and runs 4, 8 and 12 for imagined left/right hand
 movement, as defined in the dataset documentation. Motor decoding uses the ten subjects for whom the imagery runs
 were degraded in this pass, and is treated as exploratory.
 
-\textbf{Affective dataset} \cite{sanchezreolid2022emotion,sanchezreolid2025dataset}.
+\textbf{Affective dataset} \citep{sanchezreolid2022emotion,sanchezreolid2025dataset}.
 The open CC BY 4.0 dataset from Zenodo 14787743 contains EEG from 20 participants who
 viewed International Affective Picture System images selected to induce four
 valence--arousal quadrants, recorded with a low-cost Emotiv EPOC+ and a high-end
@@ -21,12 +21,12 @@ marker codes map to the quadrants as follows: 1 = high valence/high arousal,
 arousal, 10/14 = neutral. Each recording contains approximately 10 trials per quadrant
 and 8 neutral trials; neutral trials are excluded from valence and arousal analyses.
 Quadrant labels are the normative assignments of the International Affective Picture
-System \cite{lang2008iaps}, not participants' own ratings.
+System \citep{lang2008iaps}, not participants' own ratings.
 Marker positions are used as onsets and each trial is epoched 0--2.5\,s after onset.
 The low-cost Emotiv arm is analysed for the 12 participants whose CSV files are
 usable in the distributed archive (five files are empty or header-only and three fail
 the timestamp alignment). The device has been used in validation work on
-event-related potentials \cite{badcock2015emotiv}. The files contain 14 EEG channels at
+event-related potentials \citep{badcock2015emotiv}. The files contain 14 EEG channels at
 128\,Hz in device units with absolute wall-clock timestamps. The log session whose
 absolute trial times fall inside the CSV span is selected; trials are aligned by
 converting each log onset to an absolute time (SessionStartDateTimeUtc plus the
@@ -75,7 +75,7 @@ site-matching.
 \textbf{A. Alpha reactivity.} Band power (8--12\,Hz) is computed with Welch's method
 (2\,s windows, 50\% overlap) on continuous data; the outcome is the natural-log ratio
 of eyes-closed to eyes-open power, the classical resting-state contrast
-\cite{barry2007eyes}. The primary retention estimator is the geometric mean ratio derived from the paired
+\citep{barry2007eyes}. The primary retention estimator is the geometric mean ratio derived from the paired
 subject-level log difference. For the acquisition chain the reference is the same-site
 full recording (Fz in the full montage); for the noise, blink and combined arms the
 reference is the clean single-channel chain, because those manipulations are
@@ -88,7 +88,7 @@ non-inferiority test. The pre-specified 60\% practical floor for balanced accura
 reported separately as a stricter auxiliary criterion. Absolute powers are released so readers can evaluate alternative summaries.
 
 \textbf{B. Motor decoding (exploratory).} Single-trial log band power (8--30\,Hz;
-mu/beta event-related desynchronisation \cite{pfurtscheller1999erd}) with shrinkage
+mu/beta event-related desynchronisation \citep{pfurtscheller1999erd}) with shrinkage
 LDA and 5-fold stratified within-subject cross-validation. A CSP-based reference
 decoder (CSP fitted inside each fold) is reported as a sensitivity analysis. Because
 CSP requires multiple channels, the single-channel condition cannot receive the same
@@ -96,7 +96,7 @@ spatial filter; that asymmetry is part of the constraint quantified here. The ar
 reported as invalid unless a reference decoder's 95\% CI excludes chance (0.50).
 Because nominal chance levels can be exceeded by chance, interpretation uses empirical
 confidence intervals rather than the theoretical level
-\cite{combrisson2015chance,billinger2012significance}.
+\citep{combrisson2015chance,billinger2012significance}.
 
 \textbf{C. Affective decoding.} For each recording, log band power in theta (4--8\,Hz),
 alpha (8--12\,Hz) and beta (13--30\,Hz) is extracted per channel and trial; the
@@ -108,7 +108,7 @@ Three targets are decoded: valence (quadrants 1/3 versus 2/4), arousal (1/2 vers
 theta+alpha features and with only beta features. The last two conditions separate a
 representation effect from a band/EMG effect. Chance is 0.50 for the binary targets and
 0.25 for the four-class target; the empirical CI is the inferential criterion
-\cite{combrisson2015chance}. The low-cost Emotiv arm is analysed separately and compared
+\citep{combrisson2015chance}. The low-cost Emotiv arm is analysed separately and compared
 with the high-end arm on the 12 participants present in both, using a TOST procedure
 for equivalence.
 
@@ -117,7 +117,7 @@ eyes-closed run; odd and even windows are correlated, and the Spearman--Brown fo
 reported as a descriptive \emph{short-lag stability} measure. Odd and even windows are
 about two seconds apart, so this is not a split-half reliability coefficient and is not
 directly comparable to the ICC. In the ten-subject subset with three repeated
-imagined-hand runs, ICC(2,1) \cite{shrout1979icc} of alpha power across runs is reported
+imagined-hand runs, ICC(2,1) \citep{shrout1979icc} of alpha power across runs is reported
 as a block-level estimate. Neither is a test--retest coefficient across sessions, which
 is not identifiable in these datasets.
 
@@ -128,12 +128,12 @@ reported as untested.
 Subject-level outcomes are summarised with means and 95\% confidence intervals
 (t-distribution, $df=n-1$). Condition effects are reported both as unpaired means and
 as paired contrasts against the reference for the same subjects. Benjamini--Hochberg
-FDR \cite{benjamini1995fdr} is applied within the alpha condition family and within the
+FDR \citep{benjamini1995fdr} is applied within the alpha condition family and within the
 affective family; both raw and adjusted values are released. Mixed-effects models are
 not used here, and the exploratory nature of the study is stated explicitly. Equivalence
 between the low-cost and high-end devices is tested with a two one-sided tests (TOST)
 procedure using a $\pm 0.10$ balanced-accuracy margin
-\cite{lakens2018equivalence}.
+\citep{lakens2018equivalence}.
 
 \subsection*{Reproducibility}
 All degradation parameters, random seeds, dataset file hashes (written by
@@ -143,8 +143,8 @@ reproduce the exact files used. Figure source data are archived with the results
 Artifact handling is deliberately minimal: no Autoreject or ICA is applied, because
 single-channel data cannot support ICA and the benchmark is about the acquisition
 conditions rather than about cleaning; the ocular-artifact literature
-\cite{gratton1983ocular,croft2000ocular} and the EMG-contamination literature
-\cite{whitham2007emg,goncharova2003emg,muthukumaraswamy2013highfreq} are discussed as
+\citep{gratton1983ocular,croft2000ocular} and the EMG-contamination literature
+\citep{whitham2007emg,goncharova2003emg,muthukumaraswamy2013highfreq} are discussed as
 limitations. Single-channel test--retest work reports eyes-closed relative-power ICCs of
-roughly 0.76--0.85 for a consumer device \cite{rogers2016reliability}; our short-lag
+roughly 0.76--0.85 for a consumer device \citep{rogers2016reliability}; our short-lag
 estimate is a within-session stability measure and is not directly comparable.

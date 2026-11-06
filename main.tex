@@ -16,6 +16,7 @@
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{caption}
 \usepackage{multicol}
+\usepackage[round,authoryear]{natbib}
 \usepackage{float}
 
 \title{What Single-Channel and Low-Cost EEG\\
@@ -96,29 +97,58 @@ archived JSON; every cited reference was checked against a DOI record. The AI di
 generate or alter data, did not produce any image presented as experimental data, and is
 not an author. The author takes full responsibility for the content and conclusions.
 
-\section*{Data and code availability}
+\section*{Declarations}
+\subsection*{Funding}
+No funding was received for this work.
+
+\subsection*{Conflicts of interest}
+The author declares no competing interests.
+
+\subsection*{Ethics approval}
+This study is a secondary analysis of publicly available, de-identified datasets. No new
+human participants were recruited, and no ethics approval was required.
+
+\subsection*{Consent to participate}
+Not applicable: no new participants were recruited.
+
+\subsection*{Consent for publication}
+Not applicable.
+
+\subsection*{Data availability}
 All datasets are public. The EEG Motor Movement/Imagery Dataset is available from
-PhysioNet (\href{https://doi.org/10.13026/C28G6P}{doi:10.13026/C28G6P}). The affective
-dataset is available from Zenodo under CC BY 4.0
-(\href{https://doi.org/10.5281/zenodo.14787743}{doi:10.5281/zenodo.14787743}). DEAP was
-not used: its download page was unreachable during this work, and the DREAMER record is
-access-restricted \cite{katsigiannis2018dreamer}. The analysis repository (degradation pipeline, analysis scripts,
-seeds, environment file and the JSON files behind every number) is public at
+PhysioNet (doi:10.13026/C28G6P). The affective dataset is available from Zenodo under
+CC BY 4.0 (doi:10.5281/zenodo.14787743). DEAP was not used: its download page was
+unreachable during this work, and the DREAMER record is access-restricted
+\citep{katsigiannis2018dreamer}.
+
+\subsection*{Code availability}
+The analysis code, degradation pipeline, seeds, environment file and the JSON files behind
+every number are public at
 \href{https://github.com/curiousbrutus/EEG-Benchmark}{github.com/curiousbrutus/EEG-Benchmark}
 and mirrored on the OSF project page \href{https://osf.io/8wxqj/}{osf.io/8wxqj}. The
-archived version is deposited at Zenodo under DOI
-\href{https://doi.org/10.5281/zenodo.23976431}{10.5281/zenodo.23976431}. The commit hash
+archived version is deposited at Zenodo under the concept DOI
+\href{https://doi.org/10.5281/zenodo.23976431}{10.5281/zenodo.23976431}; the commit hash
 used for this draft is recorded in \texttt{results/data\_manifest.json}. The single-channel
-reporting checklist is included as \texttt{CHECKLIST.md}. No new human participants were
-recorded.
+reporting checklist is included as \texttt{CHECKLIST.md}.
 
-\section*{Author contributions}
-Conceptualization, methodology, software, analysis, writing: E.G.
+\subsection*{Authors' contributions}
+E.G. conceived the study, designed the benchmark, wrote the analysis code, performed the
+analyses, prepared the figures, and wrote the manuscript.
 
 \section*{Acknowledgements}
-No funding was received for this work. The author declares no competing interests.
+I thank the maintainers of the open datasets for making their data available.
 
-\bibliographystyle{plain}
+\section*{Open Practices Statement}
+All data used here are publicly available and de-identified (PhysioNet; Zenodo CC BY 4.0).
+The analysis plan was pre-specified but not registered; the plan and a complete deviations
+log are included in the repository and on the OSF project page
+(\href{https://osf.io/8wxqj/}{osf.io/8wxqj}), which is an unregistered project rather than
+a registration. None of the reported analyses were preregistered. The degradation and
+analysis code, derived results, and the JSON files behind every number are archived at
+GitHub and Zenodo (concept DOI
+\href{https://doi.org/10.5281/zenodo.23976431}{10.5281/zenodo.23976431}).
+
+\bibliographystyle{apalike}
 \bibliography{refs}
 
 \end{document}
